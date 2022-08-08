@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<title>SSP Traceability Workflow Guide</title>
+<style>
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+/* Uncomment @import statement below to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+audio,canvas,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+script{display:none!important}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:transparent}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:none}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #ddddd8;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+*:not(pre)>code.nobreak{word-wrap:normal}
+*:not(pre)>code.nowrap{white-space:nowrap}
+pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #ddddd8}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #ddddd8;padding-bottom:8px}
+#header .details{border-bottom:1px solid #ddddd8;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #ddddd8;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #efefed;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:30em;padding-right:0}
+#toc.toc2{width:30em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #efefed}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock pre:not(.highlight),.listingblock pre[class="highlight"],.listingblock pre[class^="highlight "],.listingblock pre.CodeRay,.listingblock pre.prettyprint{background:#f7f7f8}
+.sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
+.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
+.literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
+@media screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
+.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:#999}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0;line-height:1.45}
+table.pyhltable td.code{padding-left:.75em;padding-right:0}
+pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
+pre.pygments .lineno{display:inline-block;margin-right:.25em}
+table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock blockquote p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.5em;margin-right:.5ex;text-align:right}
+.quoteblock .quoteblock{margin-left:0;margin-right:0;padding:.5em 0;border-left:3px solid rgba(0,0,0,.6)}
+.quoteblock .quoteblock blockquote{padding:0 0 0 .75em}
+.quoteblock .quoteblock blockquote::before{display:none}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{word-spacing:0;line-height:1.6}
+.quoteblock.abstract blockquote::before,.quoteblock.abstract p::before{display:none}
+table.tableblock{max-width:100%;border-collapse:separate}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd){background:#f8f8f7}
+table.stripes-none tr,table.stripes-odd tr:nth-of-type(even){background:none}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+td>div.verse{white-space:pre}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
+.imageblock.right,.imageblock[style*="float: right"]{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background-color:#00fafa}
+.black{color:#000}
+.black-background{background-color:#000}
+.blue{color:#0000bf}
+.blue-background{background-color:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background-color:#fa00fa}
+.gray{color:#606060}
+.gray-background{background-color:#7d7d7d}
+.green{color:#006000}
+.green-background{background-color:#007d00}
+.lime{color:#00bf00}
+.lime-background{background-color:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background-color:#7d0000}
+.navy{color:#000060}
+.navy-background{background-color:#00007d}
+.olive{color:#606000}
+.olive-background{background-color:#7d7d00}
+.purple{color:#600060}
+.purple-background{background-color:#7d007d}
+.red{color:#bf0000}
+.red-background{background-color:#fa0000}
+.silver{color:#909090}
+.silver-background{background-color:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background-color:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background-color:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background-color:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+
+/* customizations */
+
+body{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.toc-hidden {
+  padding-left: 0 !important;
+}
+
+.imageblock {
+  text-align: center;
+}
+
+.imageblock img {
+  display: block;
+  margin: auto;
+}
+
+.imageblock .title {
+  display: inline-block;
+  margin: auto;
+}
+
+.vertical-text {
+	transform: rotate(-90deg) translate(-11em, 0);
+	transform-origin: left top 0;
+  float: left;
+  display: inline-block;
+  white-space: nowrap;
+  width: 1em;
+  height: 11em;
+}
+
+/* no alternating row colors */
+table tr.even,table tr.alt,table tr:nth-of-type(even) {
+  background:none
+}
+
+/* use parent text color for captions */
+.subheader, .admonitionblock td.content>.title, .audioblock>.title, .exampleblock>.title, .imageblock>.title, .listingblock>.title, .literalblock>.title, .stemblock>.title, .openblock>.title, .paragraph>.title, .quoteblock>.title, table.tableblock>.title, .verseblock>.title, .videoblock>.title, .dlist>.title, .olist>.title, .ulist>.title, .qlist>.title, .hdlist>.title {
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
+<script>
+// hide / show the Table of Contents (TOC)
+function toggleTOC() {
+  var toc = document.getElementById("toc");
+  var body = document.getElementsByTagName("body")[0];
+
+  if (toc.style.display === "none") {
+      toc.style.display = "block";
+      body.classList.remove("toc-hidden");
+  } else {
+      toc.style.display = "none";
+      body.classList.add("toc-hidden");
+  }
+}
+
+// toggle the TOC when "t" key is pressed
+document.addEventListener('keydown', (event) => {
+  if (event.key == 't') {
+    toggleTOC();
+  }
+});
+</script>
+
+<!-- Generate a nice TOC -->
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js"></script>
+<!-- We do not need the tocify CSS because the asciidoc CSS already provides most of what we neeed -->
+
+<style>
+.tocify-header {
+    font-style: italic;
+}
+
+.tocify-subheader {
+    font-style: normal;
+    font-size: 90%;
+}
+
+.tocify ul {
+    margin: 0;
+ }
+
+.tocify-focus {
+    color: #7a2518;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.tocify-focus > a {
+    color: #7a2518;
+}
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        // Add a new container for the tocify toc into the existing toc so we can re-use its
+        // styling
+        $("#toc").append("<div id='generated-toc'></div>");
+        $("#generated-toc").tocify({
+            extendPage: true,
+            context: "#content",
+            highlightOnScroll: true,
+            // don't hide the sections in the TOC
+            showAndHide: false,
+            hideEffect: "slideUp",
+            // Use the IDs that asciidoc already provides so that TOC links and intra-document
+            // links are the same. Anything else might confuse users when they create bookmarks.
+            hashGenerator: function(text, element) {
+                return $(element).attr("id");
+            },
+            // Smooth scrolling doesn't work properly if we use the asciidoc IDs
+            smoothScroll: false,
+            // Set to 'none' to use the tocify classes
+            theme: "none",
+            // Handle book (may contain h1) and article (only h2 deeper)
+            selectors: $( "#content" ).has( "h1" ).size() > 0 ? "h1,h2,h3,h4,h5" : "h2,h3,h4,h5,h6",
+            ignoreSelector: ".discrete"
+        });
+
+        // Switch between static asciidoc toc and dynamic tocify toc based on browser size
+        // This is set to match the media selectors in the asciidoc CSS
+        // Without this, we keep the dynamic toc even if it is moved from the side to preamble
+        // position which will cause odd scrolling behavior
+        var handleTocOnResize = function() {
+            if ($(document).width() < 768) {
+                $("#generated-toc").hide();
+                $(".sectlevel0").show();
+                $(".sectlevel1").show();
+            }
+            else {
+                $("#generated-toc").show();
+                $(".sectlevel0").hide();
+                $(".sectlevel1").hide();
+            }
+        }
+
+        $(window).resize(handleTocOnResize);
+        handleTocOnResize();
+    });
+</script>
+
+<!--
+<img style="display: block; margin: 2em auto; width: 30em;" src="images/FMI_logo_horizontal.svg" alt="FMI logo">
+-->
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>SSP Traceability Workflow Guide</h1>
+<div class="details">
+<span id="revnumber">version main-5c1d87ed79efd862b2a9c66584b28528bbd9ceb7,</span>
+<span id="revdate">2022-08-08</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of content</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_definition_of_esential_term">1.1. Definition of esential term</a></li>
+<li><a href="#_conventions_used_in_this_document">1.2. Conventions used in this document</a></li>
+<li><a href="#_document_structure">1.3. Document structure</a></li>
+</ul>
+</li>
+<li><a href="#sec-glueparticleapproach">2. The Glue Particle approach</a>
+<ul class="sectlevel2">
+<li><a href="#_credibble_simulationmodeling_process">2.1. Credibble simulation/modeling process</a></li>
+<li><a href="#_glue_particle">2.2. Glue Particle</a></li>
+<li><a href="#_integration_of_glue_particles_into_the_work_processes">2.3. Integration of Glue Particles into the work processes</a></li>
+<li><a href="#_role_of_glue_particle_in_terms_of_traceabitity">2.4. Role of Glue Particle in terms of traceabitity</a></li>
+<li><a href="#_role_of_glue_particle_in_terms_of_credibility">2.5. Role of Glue Particle in terms of credibility</a></li>
+<li><a href="#_role_of_glue_particle_in_terms_of_reusability">2.6. Role of Glue Particle in terms of reusability</a></li>
+<li><a href="#_integration_of_the_glue_particle_approach_into_the_ssp_standard">2.7. Integration of the Glue Particle approach into the SSP standard</a></li>
+</ul>
+</li>
+<li><a href="#_ssp_collaboration_and_traceability_scenarios">3. SSP collaboration and traceability scenarios</a>
+<ul class="sectlevel2">
+<li><a href="#_cross_company_coupled_simulation_or_modeling_processes">3.1. Cross-company coupled simulation or modeling processes</a></li>
+<li><a href="#_integrated_cross_company_simulation_and_modeling_process">3.2. Integrated cross-company simulation and modeling process</a></li>
+<li><a href="#_interdepartmental_simulation_and_modeling_processes">3.3. Interdepartmental simulation and modeling processes</a></li>
+<li><a href="#_in_house_coupling_of_simulation_and_modeling_relevant_it_tools">3.4. In-house coupling of simulation and modeling relevant IT tools</a></li>
+<li><a href="#_reduction_of_development_and_validation_effort_through_reuse">3.5. Reduction of development and validation effort through reuse</a></li>
+<li><a href="#_company_internal_evaluation_of_knowledge_by_criteria">3.6. Company internal evaluation of knowledge by criteria</a></li>
+<li><a href="#_retrospective_tracing_of_simulation_and_modeling_processes">3.7. Retrospective tracing of simulation and modeling processes</a></li>
+<li><a href="#_extension_of_sdm_infrastructures_with_ssp_traceability_management">3.8. Extension of SDM infrastructures with SSP traceability management</a></li>
+<li><a href="#_library_and_market_place_management_for_models_and_parameters">3.9. Library and market place management for models and parameters</a></li>
+</ul>
+</li>
+<li><a href="#sec-EmbeddingAndReferencingResources">4. Embedding and referencing resources</a>
+<ul class="sectlevel2">
+<li><a href="#_embedding_resources">4.1. Embedding resources</a></li>
+<li><a href="#_referencing_external_resources">4.2. Referencing external resources</a></li>
+</ul>
+</li>
+<li><a href="#sec-companyInternalSystemCouplings">5. Company internal IT tool couplings</a>
+<ul class="sectlevel2">
+<li><a href="#sec-synchroniousSystemCouplings">5.1. Synchronious IT tool couplings</a></li>
+<li><a href="#sec-asynchroniousSystemCouplings">5.2. Asynchronious IT tool couplings</a></li>
+</ul>
+</li>
+<li><a href="#_cross_company_exchange_of_glue_particle">6. Cross-company exchange of Glue Particle</a></li>
+<li><a href="#_use_cases_for_the_handling_of_glue_particle_files">7. Use cases for the handling of Glue Particle files</a>
+<ul class="sectlevel2">
+<li><a href="#_re_use_of_glue_particles">7.1. Re-use of Glue Particles</a>
+<ul class="sectlevel3">
+<li><a href="#_re_use_a_glue_particle_unchanged">7.1.1. Re-use a Glue Particle unchanged</a></li>
+<li><a href="#_re_use_a_glue_particle_and_replace_parameters">7.1.2. Re-use a Glue Particle and replace parameters</a></li>
+<li><a href="#_re_use_a_glue_particle_and_replace_simulation_model">7.1.3. Re-use a Glue Particle and replace simulation model</a></li>
+<li><a href="#_re_use_a_glue_particle_and_replace_tool_environment">7.1.4. Re-use a Glue Particle and replace tool environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_glossary">Glossary</a></li>
+<li><a href="#_references">References</a></li>
+<li><a href="#_backlog">Appendix A: Backlog</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The SSP Traceability Workflow Guide is a supplementary documentation to the SSP Traceability Specification 1.0. While the SSP Traceability Specification 1.0 essentially describes a data format for STMD files in the sense of a normative document, the SSP Traceability Workflow Guide addresses how and in which way  Glue Paerticles are used in industrial practice. It thus addresses topics and answers questions that the SSP Traceability Specification 1.0 as a normative document cannot address and answer.</p>
+</div>
+<div class="paragraph">
+<p>This is a development version of the SSP Traceability Workflow Guide. Releases and issues can be found at github.com/PMSFIT/SSPTraceability.
+<a href="https://github.com/PMSFIT/SSPTraceability/releases">Releases</a> and <a href="https://github.com/PMSFIT/SSPTraceability/issues">issues</a> can be found on <a href="https://github.com/PMSFIT/SSPTraceability">github.com/PMSFIT/SSPTraceability</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Based on typical scenarios in the simulation of complex systems, the SSP Traceability Workflow Guide intends to show how simulation processes and model creation processes may be documented using the Glue Particle approach. A Glue Particle is an XML file in which all simulation or model creation relevant resources and information are described or linked. The goals of the glue particle approach are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Traceable documentation of simulation and modeling processes for retrospective analyses</p>
+</li>
+<li>
+<p>Replacement of order-relevant information and resources for simulation and modeling processes in cross-company collaboration</p>
+</li>
+<li>
+<p>Transfer of simulation or modeling process relevant information and resources within the company between departments or IT tools</p>
+</li>
+<li>
+<p>Reuse of simulation-relevant resources and informtion (e.g., models, parameters, tools, etc.) for simulation repetition</p>
+</li>
+<li>
+<p>Reuse resources such as simulation models or parameters for similar simulations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><mark>Align these gpals with the scenarios in chapter <a href="#_ssp_collaboration_and_traceability_scenarios">Chapter 3</a></mark></p>
+</div>
+<div class="paragraph">
+<p>The SSP Traceability Workflow Guide intends to provide support on how to handle Glue Particles with the focus on workflows and processes in industrial practice. In industrial practice topics come into focus that go beyond the scope of a data format specification, including the topics in the following list.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Consistency and quality assurance</p>
+</li>
+<li>
+<p>Glue Particle data management</p>
+</li>
+<li>
+<p>Dealing with complex multi Glue Particle constellations</p>
+</li>
+<li>
+<p>Retrospective interpretation of Glue Particles</p>
+</li>
+<li>
+<p>Reuse of Glue Particles</p>
+</li>
+<li>
+<p>Exchange of Glue Particles between IT tools and systems</p>
+</li>
+<li>
+<p>Cross-company exchange of Glue Particles</p>
+</li>
+<li>
+<p>and many more</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is where the SSP Traceability Workfkow Guide comes in. The Workflow Guide addresses these issues and provides recommendations for handling Glue Particles in industrial practice.</p>
+</div>
+<div class="sect2">
+<h3 id="_definition_of_esential_term">1.1. Definition of esential term</h3>
+<div class="paragraph">
+<p>In the context of the development of the SSP Traceability Standrd, the terms scenarios, workflow, process and use case are frequently used. These terms will be explained and distinguished from each other but also positioned in relation to each other.</p>
+</div>
+<div class="paragraph">
+<p><strong>Scenario</strong></p>
+</div>
+<div class="paragraph">
+<p>A scenario describes the situation from a business perspective in which Glue Particles may be used and offer or generate significant added value. The description of a scenario includes the naming of the organization or roles involved as well as the business goals of the organization or roles involved.</p>
+</div>
+<div class="paragraph">
+<p>The term scenario in this context should not be confused with the term scenario as used in the context of automated and autonomous driving. In automated and autonomous driving, a scenario refers to a complex traffic situation with a number of moving and non-moving objects in the road space and a complex constellation of many boundary conditions in which an automated or autonomous vehicle is to move.</p>
+</div>
+<div class="paragraph">
+<p><strong>Workflow</strong></p>
+</div>
+<div class="paragraph">
+<p>The workflow describes how Glue Particle will be used in each scenario and how they may provide and generate the expected added value. The process flow of each scenario is described by at least one, or if necessary, by several alternative or complementary workflows. Essentially, process diagrams and additional textual descriptions are used. Here, the focus is on the process-related handling of the Glue Particle</p>
+</div>
+<div class="paragraph">
+<p><strong>Use case</strong></p>
+</div>
+<div class="paragraph">
+<p>A use case describes how the Glue Particle is handled in very specific, narrowly defined situations, or how it is interacted with manually or technically. The main question here is who does what with the Glue Particle and when, and what the respective result of the interaction is. The focus here is on the operational handling of the glue particle.</p>
+</div>
+<div class="paragraph">
+<p><strong>Process</strong></p>
+</div>
+<div class="paragraph">
+<p>The term process may be used on different levels and means that interrelated activities, interactions and communications have a certain causal and temporal sequence. In addition, the term may also be part of fixed and thus predetermined terms, such as commissioning process, requirements process or export process. The term process may therefore appear in this documentation in the context of scenarios as well as in the context of workflows and use cases.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conventions_used_in_this_document">1.2. Conventions used in this document</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The version number of this documentation is to be interpreted according to the <em>Semantic Versioning Specification (SemVer) 2.0.0</em> <a href="#SEMVER200">[SEMVER200]</a>.</p>
+</li>
+<li>
+<p>The key words <strong>MUST</strong>, <strong>MUST NOT</strong>, <strong>REQUIRED</strong>, <strong>SHALL</strong>, <strong>SHALL NOT</strong>, <strong>SHOULD</strong>, <strong>SHOULD NOT</strong>, <strong>RECOMMENDED</strong>, <strong>NOT RECOMMENDED</strong>, <strong>MAY</strong>, and <strong>OPTIONAL</strong> in this document are to be interpreted as described in <em>RFC 2119</em> <a href="#RFC2119">[RFC2119]</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_document_structure">1.3. Document structure</h3>
+<div class="paragraph">
+<p><mark>Hier zum Schluss noch die Dokumentstruktur einführen</mark></p>
+</div>
+<div class="paragraph">
+<p><mark>
+* Glue Particle Approach
+* Szenarien und Workflows
+* Use Cases für GP Handlig
+</mark></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-glueparticleapproach">2. The Glue Particle approach</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The essential core of the Glue Particle approach is the in-process, machine-readable documentation of information about a credible simulation or modeling task in a standardized  format.</p>
+</div>
+<div class="sect2">
+<h3 id="_credibble_simulationmodeling_process">2.1. Credibble simulation/modeling process</h3>
+<div class="paragraph">
+<p>Both a credible simulation process and a credible modeling process are very similar and both</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>have a fixed start in terms of time</p>
+</li>
+<li>
+<p>usually start with defined and communicated goals</p>
+</li>
+<li>
+<p>are completed at a certain point in time</p>
+</li>
+<li>
+<p>are completed upon achievement of the defined goals</p>
+</li>
+<li>
+<p>can be structurally divided into execution phases and execution steps.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_glue_particle">2.2. Glue Particle</h3>
+<div class="paragraph">
+<p>The task of the Glue Particle is to bundle all relevant information about a credible simulation/modeling process in a standardized format in XML files. This includes, among other things, the inclusion of information about resources used. The inclusion of resources in the Glue Particle may be done in three different ways.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Resource information may be written directly into the XML file. This procedure is suitable for single or very few atomic information.</p>
+</li>
+<li>
+<p>The far more elegant way is to outsource the information into own files and to refer to this outsourced information from the Glue Particle file. This is more suitable for a bigger amount of information.</p>
+</li>
+<li>
+<p>A third option is to link the Glue Particle file to relevant resources stored in IT systems.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#im-threeKindOfResourceInclusion">Figure 1</a> illustrates these three ways to include resources.</p>
+</div>
+<div id="im-threeKindOfResourceInclusion" class="imageblock">
+<div class="content">
+<img src="images/ThreeKindOfResourceInclusion.png" alt="500" width="500">
+</div>
+<div class="title">Figure 1. Three ways to include resource information into a Glue Particle</div>
+</div>
+<div class="paragraph">
+<p><a href="#sec-EmbeddingAndReferencingResources">Chapter 4</a> goes into more detail about these three options.</p>
+</div>
+<div class="paragraph">
+<p>A credible simulation/modeling process typically goes through the following execution phases, starting with the analysis of the actual objective of the simulation or modeling task and ending with the decision whether this objective has been met.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Analysis phase</p>
+</li>
+<li>
+<p>Requirements phase</p>
+</li>
+<li>
+<p>Design phase</p>
+</li>
+<li>
+<p>Implementation phase</p>
+</li>
+<li>
+<p>Execution phase</p>
+</li>
+<li>
+<p>Evaluation phase</p>
+</li>
+<li>
+<p>Fulfillment phase</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Therefore, the Glue Particle, which is supposed to document the information about these execution phases, contains seven correspondingly named segments to structure this phase-specific information. In addition, there is a segment with general information about the respective Glue Particle file.</p>
+</div>
+<div class="paragraph">
+<p>Each execution phase of a credible simulation/modeling process may include one or more execution steps. For example, in the requirements phase,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Requirements for models,</p>
+</li>
+<li>
+<p>Requirements on parameters,</p>
+</li>
+<li>
+<p>Requirements to the simulation environment</p>
+</li>
+<li>
+<p>Requirements for simulation integration</p>
+</li>
+<li>
+<p>Requirements for test cases,</p>
+</li>
+<li>
+<p>requirements for quality assurance</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>may be specified. In addition, a final review of all results of an execution phase and their formal confirmation may be useful. For example, at the end of the requirements phase, there may be a verification of all requirements and their compatibility, as well as the confirmation and release of all requirements. Therefore, in each phase segment there is a final sub-segment that contains information about this verification step.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, in a Glue Particle File, each phase segment has one or more step segments for the individual execution steps of an execution phase. Each of these step segments again has the same uniform structure. A segment for a step in a phase is structured according to input, procedure, output, rational and life cycle information. <a href="#in-GlueParticleStructureSchema">[in-GlueParticleStructureSchema]</a> shows the basic structure of a Glue Particle using a section of the STMD XML schema as an example.</p>
+</div>
+<div id="im-GlueParticleStructureSchema" class="imageblock">
+<div class="content">
+<img src="images/GlueParticleStructureSchema.png" alt="1000" width="1000">
+</div>
+<div class="title">Figure 2. Basic structure of a Glue Particle</div>
+</div>
+<div class="paragraph">
+<p>It is important to understand what a Glue Particle is and what it is <strong>NOT</strong>, or what it may and <strong>may not</strong> be used for.</p>
+</div>
+<div class="paragraph">
+<p>What is a "Glue Particle"?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A Glue Particle is a bundle or compilation of relevant information for a credible simulation/modeling process.</p>
+</li>
+<li>
+<p>A Glue Particle is a file used to exchange information between IT tools and systems (data management systems, authoring systems, etc.).</p>
+</li>
+<li>
+<p>A Glue Particle is a file used to exchange information between organizations (departments, companies, etc.).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>What is a Glue Particle <strong>NOT?</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A Glue Particle is <strong>NOT</strong> a data format used to organize information in IT systems.</p>
+</li>
+<li>
+<p>A Glue Particle is <strong>NOT</strong> a process format for controlling technical or organizational processes.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_integration_of_glue_particles_into_the_work_processes">2.3. Integration of Glue Particles into the work processes</h3>
+<div class="paragraph">
+<p>The Glue Particles may be used both for company-internal documentation to ensure traceability and to support the reusability of information and artifacts as well as for the exchange of information and artifacts across company boundaries. It would be conceivable, for example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>for a company-internal department to commission another department within a company for a system simulation</p>
+</li>
+<li>
+<p>or to commision an external service provider to create simulation models in order to carry out a simulation task,</p>
+</li>
+<li>
+<p>or to outsource the execution of the actual simulation to an external computing center.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In all these cases, the Glue Particles serve both</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>to provide or exchange information and artifacts needed to perform the commissioned task or</p>
+</li>
+<li>
+<p>to provide and exchange the documentation on the execution of the task and the documentation of the results.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As an example for a commision, a simulation task may be defined in the context of a component or system development and handed over to a simulation engineer or to a simulation department. As another example, a modelling task may be generated from a simulation task, or to be more specific, from the implementation phase of the simulation task and handed over to a modeling expert. <a href="#im-modelingRequest">Figure 3</a> shows schematically how a modeling task is generated from a simulation task and <a href="#im-DataView">Figure 4</a> illustrates the role of the Glue Particles in this scenario.</p>
+</div>
+<div id="im-modelingRequest" class="imageblock">
+<div class="content">
+<img src="images/ModelingRequest.png" alt="800" width="800">
+</div>
+<div class="title">Figure 3. A modeling request is handed over to an external partner</div>
+</div>
+<div id="im-DataView" class="imageblock">
+<div class="content">
+<img src="images/DataView.png" alt="800" width="800">
+</div>
+<div class="title">Figure 4. Role of the Glue Particle in simulation and modeling process couplings</div>
+</div>
+<div class="paragraph">
+<p><a href="#im-processHandover">Figure 5</a> shows schematically how a complete phase or even more that one phase of the credible simulation task is handed over to an external partner.</p>
+</div>
+<div id="im-processHandover" class="imageblock">
+<div class="content">
+<img src="images/ProcessHandover.png" alt="800" width="800">
+</div>
+<div class="title">Figure 5. A complete phase of the credible simulation process is handed over to an external partner</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_role_of_glue_particle_in_terms_of_traceabitity">2.4. Role of Glue Particle in terms of traceabitity</h3>
+<div class="paragraph">
+<p>One of the core goals of the Glue Particle approach is the traceability of simulation and modeling processes. This means that it should be retrospectively traceable what was simulated, how it was simulated, which models and which parameters were used for the simulation, which IT tools were used for the simulation and last but not least, which methods were used for the simulation, which assumptions were made and with which rationale these assumptions were made.</p>
+</div>
+<div class="paragraph">
+<p>All this information is to be bundled in the Glue Particle and with the help of the Glue Particle. The entire simulation or modeling process is covered and the Glue Particle is stored permanently so that it may be consulted at a later point in time if required. The Glue Particle, i.e. the STMD file, is thus the central information carrier for traceability.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_role_of_glue_particle_in_terms_of_credibility">2.5. Role of Glue Particle in terms of credibility</h3>
+<div class="paragraph">
+<p>In product and system development projects, numerous design decisions are made based on simulation results. If you want to make  design decisions with certainty, you may have to trust  simulation results. This trust is strongly linked to the credibility of the simulation results and to the credibility of the entire simulation process. A complete high-quality and traceable documentation of the simulation process may significantly and decisively improve the credibility and trust in the simulation process and in the simulation results and thus may ease design decisions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_role_of_glue_particle_in_terms_of_reusability">2.6. Role of Glue Particle in terms of reusability</h3>
+<div class="paragraph">
+<p>In system and product development processes it may be necessary to repeat a simulation. This may be an exact repetition or a repetition with slightly modified boundary conditions. In this case, it is not only important to know what was simulated and how (traceability), but it is also extremely helpful if the resources used can be accessed directly. Here, too, a Glue Particle may play an important role, as it supports the reusability of resources.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_integration_of_the_glue_particle_approach_into_the_ssp_standard">2.7. Integration of the Glue Particle approach into the SSP standard</h3>
+<div class="paragraph">
+<p>The SSP Traceability Specification is a so-called layered standard in the sense of the <a href="https://ssp-standard.org/">Systems Structure and Parameterization (SSP)</a> standard of the <a href="https://www.modelica.org/">Modelica Association</a>. In particular, the Glue Particle approach uses the System Structure Package format of SSP. A System Structure Package is a zip archive containing a so-called System Structure Description file (SSD file) and all resources like models and parameter files needed to describe a system structure.</p>
+</div>
+<div class="paragraph">
+<p>Glue Particles are also packed according to this principle. A Glue Particle for a credibble simulation/modeling process is a zip archive containing at least one SSD file (according to the requirements of the SSP standard) and at least one STMD file. The STMD file represents the actual Glue Particle. If local resources are referenced by the STMD file, they must also be included in the Glue Particle zip archive. When sharing Glue Particles across companies, all external references usually point to files within the zip archive.</p>
+</div>
+<div class="paragraph">
+<p><a href="#im-SspSystemStructurePackage">Figure 6</a> shows a typical System Structure Package as specified in the SSP standard specification. The SSD file is mandatory. All othre data files are optional according to the business needs. The meaning of the file extensions are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The system structure description (SSD) is a mandatory part of every system structure package that is used to describe
+hierarchical and functional structures of a whole FMU network.</p>
+</li>
+<li>
+<p>A system structure parameter values (SSV) element is used to describe parameters and external parameter sets that
+can be applied to an FMU, thus parameterizing it.</p>
+</li>
+<li>
+<p>A system structure parameter mapping (SSM) is used to describe parameter mappings that may be required to
+parameterize FMUs.</p>
+</li>
+<li>
+<p>A system structure signal dictionary (SSB) is used to describe signals.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All files are encoded in XML.</p>
+</div>
+<div id="im-SspSystemStructurePackage" class="imageblock">
+<div class="content">
+<img src="images/SpsSystemStructurePackage.png.png" alt="800" width="800">
+</div>
+<div class="title">Figure 6. System Structure Package as specified in the SSP standard</div>
+</div>
+<div class="paragraph">
+<p>In order to use the Suytem Structure Package as a standardized container mechanism for carrying Glue Particles along with local file ressources the SSD file must be included in the System Struncture Package archive to remain compatible with the SSP standard. This may be a business compatible SSD file that represents the system being simulated or may also be a "dummy" SSD file that is practically empty with no business related content. The meaning of the file extensions are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The STMD file is the core file of the Glue Particle.</p>
+</li>
+<li>
+<p>The SRMD file is a file that describes simulation resources.</p>
+</li>
+<li>
+<p>The SMMD file comprises simulation model medadata, the business related metadata for the Functional Mock-up Unit (FMU).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All files are encoded in XML.</p>
+</div>
+<div class="paragraph">
+<p>im-SspSystemStructurePackageForGlueParticle illustrates an System STructure Package applied for carrying a Glue Particle.</p>
+</div>
+<div id="im-SspSystemStructurePackageForGlueParticle" class="imageblock">
+<div class="content">
+<img src="images/SpsSystemStructurePackageForGlueParticle.png" alt="800" width="800">
+</div>
+<div class="title">Figure 7. System Structure Package applied for carrying Glue Particles</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ssp_collaboration_and_traceability_scenarios">3. SSP collaboration and traceability scenarios</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_cross_company_coupled_simulation_or_modeling_processes">3.1. Cross-company coupled simulation or modeling processes</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_integrated_cross_company_simulation_and_modeling_process">3.2. Integrated cross-company simulation and modeling process</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_interdepartmental_simulation_and_modeling_processes">3.3. Interdepartmental simulation and modeling processes</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_in_house_coupling_of_simulation_and_modeling_relevant_it_tools">3.4. In-house coupling of simulation and modeling relevant IT tools</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_reduction_of_development_and_validation_effort_through_reuse">3.5. Reduction of development and validation effort through reuse</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_company_internal_evaluation_of_knowledge_by_criteria">3.6. Company internal evaluation of knowledge by criteria</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_retrospective_tracing_of_simulation_and_modeling_processes">3.7. Retrospective tracing of simulation and modeling processes</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_extension_of_sdm_infrastructures_with_ssp_traceability_management">3.8. Extension of SDM infrastructures with SSP traceability management</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_library_and_market_place_management_for_models_and_parameters">3.9. Library and market place management for models and parameters</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-EmbeddingAndReferencingResources">4. Embedding and referencing resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Glue Particle provides in several sections three alternative options to include information about resources, e.g., resources for inputs, outputs or procedure information.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Resource information may be written directly into the XML file. This procedure is suitable for single or very few atomic information.</p>
+</li>
+<li>
+<p>The far more elegant way is to outsource the information into own files and to refer to this outsourced information from the Glue Particle file. This is more suitable for a bigger amount of information.</p>
+</li>
+<li>
+<p>A third option is to link the Glue Particle file to relevant resources stored in IT systems.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This chapter outlines how these options may be used and when best to use which of these options.</p>
+</div>
+<div class="sect2">
+<h3 id="_embedding_resources">4.1. Embedding resources</h3>
+<div class="paragraph">
+<p>Resources are specified using the <em>&lt;stc:Resource&gt;</em> element. To embed information about resources directly in the Glue Particle, the element <em>&lt;stc:Content&gt;</em> must be created within the element <em>&lt;stc:Resource&gt;</em>. Any content may then be created in the <em>&lt;stc:Content&gt;</em> element.</p>
+</div>
+<div class="paragraph">
+<p><a href="#im-embeddedresourceinformationschema">Figure 8</a> shows how this construct is built up in the Glue Particle XML Schema for a Credible Simulation Process.</p>
+</div>
+<div id="im-embeddedresourceinformationschema" class="imageblock">
+<div class="content">
+<img src="images/embeddedResourceInformationSchema.png" alt="800" width="800">
+</div>
+<div class="title">Figure 8. Embedding resource information directly in a Glue Paerticle file</div>
+</div>
+<div class="paragraph">
+<p>Direct embedding of resource information may be useful when the information is very compact and very limited, e.g., for single or very few information. <a href="#im-embeddedresourceInformationExample">Figure 9</a> provides an example for embedding resource information by means of a XML element <em>&lt;stc:Content&gt;</em> Element. Note that the source attribute in the XML element <em>&lt;stc:Resource&gt;</em> is not used.</p>
+</div>
+<div id="im-embeddedresourceInformationExample" class="imageblock">
+<div class="content">
+<img src="images/EmbeddedresourceInformationExample.png" alt="800" width="800">
+</div>
+<div class="title">Figure 9. Embedded resource information in a Glue Particle</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_referencing_external_resources">4.2. Referencing external resources</h3>
+<div class="paragraph">
+<p>As soon as a larger amount of information is to be specified per resource, it is no longer useful to write it directly into the Glue Particle XML file for several reasons.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The file size of a Glue Particle may increase significantly if too much resource information is embedded into a Glue Particle file. This effect would carry over to each new version of the Glue Particle with successive development of a Glue Particle.</p>
+</li>
+<li>
+<p>Referencing resources that are external to the Glue Particle improves the possibilities for resource reuse. In principle, an external resource may be referenced by multiple Glue Particles simultaneously and consistently.</p>
+</li>
+<li>
+<p>Many resources can be expressed in standardized data formats or are available in standardized formats. Therefore, it would be inefficient to recode this information from the standardized data format into a Glue Particle compatible format for embedding. It is more efficient to leave a resource in its standardized data format and thus also facilitate the processing of the information in the collaborative engineering processes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Basically, two types of resources may be distinguished.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>File-based resources:</strong> These are resources that are available as a file and are added to the System Structure Package, the container for the Glue Particle.</p>
+</li>
+<li>
+<p><strong>Remote ressources:</strong> Resources that are managed in a data management system. From the point of view of the Glue Particle, these may also be referred to as remote resources.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Regardless of which type of resource is to be referenced, the URI, i.e. either the relative path to a file within the Glue Particle container or the URL to a resource in a data management system, is written to the <em>source</em> attribute of the XML element <em>&lt;stc:resource&gt;</em>. If the <em>source</em> attribute is missing, the resource is provided inline as contents of the <em>&lt;stc:Content&gt;</em> element, which must not be present otherwise</p>
+</div>
+<div class="paragraph">
+<p><a href="#im-referencedResourcesSchema">Figure 10</a> shows how this construct is represented in the Glue Particle XML Schema for a Credible Simulation Process.</p>
+</div>
+<div id="im-referencedResourcesSchema" class="imageblock">
+<div class="content">
+<img src="images/ReferencedResourcesSchema.png" alt="1000" width="1000">
+</div>
+<div class="title">Figure 10. Referencing resources via URI</div>
+</div>
+<div class="paragraph">
+<p>Below are two examples of how the references are implemented.</p>
+</div>
+<div class="paragraph">
+<p><a href="#im-referencdLocalresourceInformationExample">Figure 11</a> provides an example for referenced local resource information by means of the attribute <em>source</em> in the a XML element <em>&lt;stc:Resource&gt;</em> Element. Note that there do not exist any <em>&lt;stc:content&gt;</em> elements in the XML element <em>&lt;stc:Resource&gt;</em>.</p>
+</div>
+<div id="im-referencdLocalresourceInformationExample" class="imageblock">
+<div class="content">
+<img src="images/ReferencedLocalResourceInformationExample.png" alt="800" width="800">
+</div>
+<div class="title">Figure 11. Referenced local resource information in a Glue Particle</div>
+</div>
+<div class="paragraph">
+<p><mark>Beispielcode Remote Resource</mark></p>
+</div>
+<div class="paragraph">
+<p>Whether file-based resource or a remote resource is used depends on the context. In the following, the respective context-specific advantages and disadvantages are described.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When referencing to resources in managed source systems, there is no additional redundancy.</p>
+</li>
+<li>
+<p>Since information in data management systems is usually managed with version accuracy, the reference to resources in source systems significantly improves traceability.</p>
+</li>
+<li>
+<p>Since information in data management systems is usually stored persistently and is specially protected by backup mechanisms, the reference to resources in source systems provides improved security against data loss or undesired data modification.</p>
+</li>
+<li>
+<p>On the other hand, the references to remote resources usually no longer work when the Glue Particle is exchanged across companies, as access to the source system then probably no longer works.</p>
+</li>
+<li>
+<p>There may also be restrictions within the company if a consumer of a Glue Particle does not have access to the source system.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-companyInternalSystemCouplings">5. Company internal IT tool couplings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><mark>Tobe defined</mark></p>
+</div>
+<div class="sect2">
+<h3 id="sec-synchroniousSystemCouplings">5.1. Synchronious IT tool couplings</h3>
+<div class="paragraph">
+<p><mark>Tobe defined</mark></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-asynchroniousSystemCouplings">5.2. Asynchronious IT tool couplings</h3>
+<div class="paragraph">
+<p>Glue Particle may be used within companies to successively collect information such as inputs, outputs, procedures and their rationales during the simulation process (Credible Simulation Process) for the individual phases and steps of the process and store them in the Glue Particle, thus gradually enriching the Glue Particle.</p>
+</div>
+<div class="paragraph">
+<p>The Glue Particle is to be carried through the process and the Glue Particle transports information through the IT tool chain. This means that the IT tools and systems used in the simulation process must be able to read or import a Glue Particle and write or export it.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An IT tool used in phase x of the simulation process would write resources generated by that tool to the Glue Particle or link resources and then export or save the Glue Particle.</p>
+</li>
+<li>
+<p>An IT Tool used in phase x-1,x+2 etc. of the simulation process would read or import the Glue Particle and may use the resources provided by it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This type of IT system coupling via the export - import processes is referred to as asynchronous coupling. The IT systems involved do not have a direct interface with each other and are therefore not directly connected. Therefore, both systems do not have to be in operation at the same time.</p>
+</div>
+<div class="paragraph">
+<p><a href="#im-asynchronousCoupling">Figure 12</a> illustrates the asynchronous system coupling.</p>
+</div>
+<div id="im-asynchronousCoupling" class="imageblock">
+<div class="content">
+<img src="images/AsynchronousCoupling.png" alt="800" width="800">
+</div>
+<div class="title">Figure 12. Asynchrous IT tool coupling by means of Glue Particle</div>
+</div>
+<div class="paragraph">
+<p>By using the Glue Particle to establish an asynchronous coupling of IT tools and systems involved in the process, the number of interfaces required can be reduced compared to synchronous coupling. This reduction effect increases with the number of IT tools and systems involved in the process and the complexity of the information transport through the process.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cross_company_exchange_of_glue_particle">6. Cross-company exchange of Glue Particle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An exchange of data, especially engineering data, is usually linked to a business relationship between the companies involved, or the need for an exchange of data is conditioned by a business relationship. This is also the case with the exchange of Glue Particles.</p>
+</div>
+<div class="paragraph">
+<p>A cross-company exchange of information typically couples two different processes using the transferred information. On the one hand, there is a process at the customer&#8217;s side, e.g., a simulation process, and on the other hand, there is a process on the contractor&#8217;s side, e.g., a modeling process. At the customer&#8217;s side, a simulation is carried out as part of a product development and for this simulation the simulation model of a supplied component is required. The simulation model is to be provided by the supplier. The simulation process and the modeling process are linked, for example, by a modeling order or a model request and by the transfer of the model to the customer. <mark>&lt;&lt;&gt;&gt; illustrates this exchange constellation on a high level.</mark></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_cases_for_the_handling_of_glue_particle_files">7. Use cases for the handling of Glue Particle files</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_re_use_of_glue_particles">7.1. Re-use of Glue Particles</h3>
+<div class="paragraph">
+<p>The re-use of Glue Particles, respectively of STMD files is one of the main applications of the Glue Particle approach.  Glue Particles reference resources that are consistent with each other for a given simulation or modeling task. These resources may be simulation models, parameters, test cases, tools used for the simulation, and other relevant resources. The compilation of these resources and additional information documenting procedures, assumptions and simplifications and respective rationales in a Glue Particle represents a considerable added value. This applies especially if a Glue Particle is entirely or partially re-used for nother simulation tasks. Four examples of re-using Glue Particles are introduced here.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Re-use of Glue Particles for a simulation of a DC motor with the same objectives, conditions and resources</p>
+</li>
+<li>
+<p>Re-use of Glue Particles for a simulation of a DC motor with the same objectives but aother set of parameters</p>
+</li>
+<li>
+<p>Re-use of Glue Particles for a simulation  of a DC motor with the same objectives but another motor model</p>
+</li>
+<li>
+<p>Re-use of Glue Particles for a simulation with the same objectives in another simulation tool environment</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_re_use_a_glue_particle_unchanged">7.1.1. Re-use a Glue Particle unchanged</h4>
+<div class="paragraph">
+<p><mark>tbd</mark></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_re_use_a_glue_particle_and_replace_parameters">7.1.2. Re-use a Glue Particle and replace parameters</h4>
+<div class="paragraph">
+<p>A repetition of a simulation with another set of parameters requires a replacement of the parameter file by another parameter file in case the parameters are stored in a local digital file. Assuming the new parameter file may be named differently also the resource link must be adapted for referencing the new parameter file. In case the parameters are stored in an IT system, e.g. in a parameter database, only the resource link has to be adapted.</p>
+</div>
+<div class="paragraph">
+<p><strong>Preconditions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The simulation objectives and requirements remain unchanged</p>
+</li>
+<li>
+<p>The design specification for the parameters remains unchanged</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Affected CSP sections</strong></p>
+</div>
+<div class="paragraph">
+<p>The parameters are implemented in the CSP step <em>Implement Parameters</em> <mark>(see also ???)</mark> of the CSP phase <em>Implement and Asure Quality for Simulation Setup</em> <mark>(see also ???)</mark> and the implemented parameters are referenced as an outpout of this CSP step. Therefore if the parameters are replaced by other parameters the CSP step <em>Implement Parameter</em>  ist primarily affected.
+Because the parameters have been replaced it is necessary to also check whether the replacement has any influences on the simulation setup integration. Additionally, there may be a formal necessity for re-verifying the information in the Glue Particle section <em>ImplementationPhase</em> in order to assure and conform the simulation setup quality.</p>
+</div>
+<div class="paragraph">
+<p>Primarily affected CSP sections are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Implement Parameters</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Co-affected CSP sections are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrate Simulation Environment, Models, Parameters</p>
+</li>
+<li>
+<p>Assure Simulation Setup Quality</p>
+</li>
+<li>
+<p>Derive Simulation Setup Quality Verdict</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The affected CSP sectios are shown in <a href="#im-CSP-UC1">Figure 13</a>.</p>
+</div>
+<div id="im-CSP-UC1" class="imageblock">
+<div class="content">
+<img src="images/CSP-UC1.png" alt="800" width="800">
+</div>
+<div class="title">Figure 13. Primarily affected CSP sections (red framed) and Co-affected CSP sections (light red framed )</div>
+</div>
+<div class="paragraph">
+<p><strong>Pre-state Glue Particle</strong></p>
+</div>
+<div class="paragraph">
+<p><mark>Relevanter Ausschnitt vom Glue Particle</mark></p>
+</div>
+<div class="paragraph">
+<p><strong>User Operations</strong></p>
+</div>
+<div class="paragraph">
+<p>If parameters are replaced, the user must proceed as follows to ensure consistent documentation of the new simulation task.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In case the parameters sre provided as a local digital file replace the parameter file with a new parameter file</p>
+</li>
+<li>
+<p>Replace the existing resource link with a new link, either to the new local digital file or to a new target in an IT system</p>
+</li>
+<li>
+<p>Check whether the new parameters are syntactically compatible with the associated model and are semantically valid</p>
+</li>
+<li>
+<p>Document in the <em>Procedure</em> field of the STMD step section <em>ImplementParameter</em> in the STMD phase stection <em>ImplementationPhase</em> the replacement procedure, if applicable, e.g. <em>file physically replaced</em> or <em>file edited</em></p>
+</li>
+<li>
+<p>Document in the <em>Rational</em> field of the STMD step section <em>ImplementParameter</em> in the STMD phase stection <em>ImplementationPhase</em> the reason for the replacement of the parameters, e.g. <em>simulation with more precised parameters</em> or <em>simulation with upscaled parameters to represent a larger DC motor</em></p>
+</li>
+<li>
+<p>Check whether the replacement of the parameters has any influences on its integration into the overall simulation setpup</p>
+</li>
+<li>
+<p>Implement all required measures to assure the simulation setup quality with the new parameters</p>
+</li>
+<li>
+<p>Document the assurance of the simulation setup quality in the STMD step section <em>AssureSimulationSetupQuality</em> of the STMD phase section ImplementationPhase.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Tools Functionalities</strong></p>
+</div>
+<div class="paragraph">
+<p>A tool designed to handle Glue Particles resp. STMD files may support the user in the folliwing activities.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Replacement ot the parameters</p>
+</li>
+<li>
+<p>Replacement resp. the editing of the resource link</p>
+</li>
+<li>
+<p>Script-based compability check of the parameters</p>
+</li>
+<li>
+<p>Filling out the <em>Procedure</em> and the <em>Rationale</em> field in the Glue Particle</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Derivation chain</strong></p>
+</div>
+<div class="paragraph">
+<p>It is important that the trace to the original Glue Particle is preserved. Corresponding information should be entered in the STMD section <em>DerivationChain</em> in the STDM section <em>GeneralInformation</em>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Handling metadata</strong></p>
+</div>
+<div class="paragraph">
+<p>This use case does not result in any specific additional requirements for handling metadata. The general requirements as documented in chapter ??? apply here.</p>
+</div>
+<div class="paragraph">
+<p><strong>Data Management Operations</strong>
+When a Glue Particle is revised, a new Glue Particle respectively a new version of the Glue Particle is actually created.
+The link betwen a Glue Particle and the original Glue Particle might be managed and displayed at the data management level.</p>
+</div>
+<div class="paragraph">
+<p><strong>Post-state Glue Particle</strong></p>
+</div>
+<div class="paragraph">
+<p><mark>Relevanter Ausschnitt vom Glue Particle</mark></p>
+</div>
+<div class="paragraph">
+<p><strong>Post-conditions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A new Glue Particle is available</p>
+</li>
+<li>
+<p>The new Glue Particle has a trace to the Glue Particle from which it originated</p>
+</li>
+<li>
+<p>The Glue Particle references new parameters</p>
+</li>
+<li>
+<p>The procedure and the reason of the replacement are documented</p>
+</li>
+<li>
+<p>The integrity of the entire simulation setup with the new parameters has been checked and confirmed according to the requirements of the Credible Simulation Process</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_re_use_a_glue_particle_and_replace_simulation_model">7.1.3. Re-use a Glue Particle and replace simulation model</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_re_use_a_glue_particle_and_replace_tool_environment">7.1.4. Re-use a Glue Particle and replace tool environment</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_glossary">Glossary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following list of terms and, where given, abbreviations serves to explain typical technical terms related to the Glue Particle approach. This list explicitly does not represent any technical vocabulary from the engineering context.</p>
+</div>
+<table id="tb-termsAndAbbreviations" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Terms and abbreviations</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term</th>
+<th class="tableblock halign-left valign-top">Abbreviation</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boundary model</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Models of the elements whose interaction with the core model (SuT) should be taken into account</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core model</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The simulation model that is to represent the system under test. In the case of SW the SW</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Credible Modeling Process</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CMP</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Credibility documentation</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Credibility of simulation</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>see chapter CSP</mark></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Credible Simulation Process</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CSP</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment model</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subset of boundary models: Models of the (non-technical) environment in which a system under test operates (roads, traffic, weather, etc.)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Glue Particle</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>entfernen</mark></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intellectual Property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IP</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in this context always simulation model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model Identification Card</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MIC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standard/recommodation from SystemX for Model Meta Data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modeling request</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modeling task</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product Lifecycle Management</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLM</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Schauen was in CSP schon definiert ist</mark></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simulation environment</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The "simulation environment" describes the complete tooling that is needed to run and evaluate a simulation  (simulator, pre-processing, post-processing, test tool, data- and workflow management, &#8230;&#8203;)without simulation models.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Simulation environment) module</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elements of the simulation infrastructure which are used and have to be developed or adapted. this can be done in separate subprocesses (similar to model development process), like pre/post-processing functions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simulation-based Engineering Task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SbET</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simulation Model Metadata</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMMD</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simulation objectives</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simulation request</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simulation setup</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The simulation setup includes all elements needed to run and evaluate a simulation. These are the simulation models, the parameters, the test cases, the simulation environment and their interaction. The interaction is usually described in workflows.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simulation task</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simulation Task Meta Data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STMD</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single decision process</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">System under Test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SuT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Determination of what is the system to be considered (DC motor, SW)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test case</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Typical applications of the CSP are System Analysis, Optimization and Test. The CSP differs here only in some specific aspects. For better readability, the synonym "test" is used for System Analysis, Optimization and Test.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verification and Validation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V&amp;V</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references">References</h2>
+<div class="sectionbody">
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="RFC2119"></a>[RFC2119] Bradner, S.: <strong>Key words for use in RFCs to Indicate Requirement Levels</strong>. RFC 2119, March 1997. <a href="https://www.ietf.org/rfc/rfc2119.txt" class="bare">https://www.ietf.org/rfc/rfc2119.txt</a></p>
+</li>
+<li>
+<p><a id="SEMVER200"></a>[SEMVER200] Preston-Werner, T.: <strong>Semantic Versioning 2.0.0</strong>. <a href="https://semver.org/spec/v2.0.0.html" class="bare">https://semver.org/spec/v2.0.0.html</a></p>
+</li>
+<li>
+<p><a id="SSP10"></a>[SSP10] Modelica Association: <strong>System Structure and Parameterization 1.0</strong>. March 2019. <a href="https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf" class="bare">https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf</a></p>
+</li>
+<li>
+<p><a id="STMD"></a>[STMD] Modelica Association: <strong>SSP Traceability Version 1.0.0-Beta2,unreleased</strong>
+<mark>Link hinzufügen</mark></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_backlog">Appendix A: Backlog</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Using SSD-files to specify models</p>
+</li>
+<li>
+<p>Image for generic illustration of cross-company Glue Particle couplings.</p>
+</li>
+<li>
+<p>Distinction from the internal exchange of Glue Particles</p>
+</li>
+<li>
+<p>Central concepts for cross-company Glue Particle couplings</p>
+</li>
+<li>
+<p>Example: Simulation request to a supplier</p>
+</li>
+<li>
+<p>Example: Transfer of simulation results</p>
+</li>
+<li>
+<p>Example: Model request to a supplier</p>
+</li>
+<li>
+<p>Example: Model handover to customer</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>

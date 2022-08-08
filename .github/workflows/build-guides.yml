@@ -1,0 +1,43 @@
+name: Build Guides
+
+on:
+  push:
+    branches-ignore: [ 'temp/*' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-guides:
+    name: Build SSP Traceability Guides
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: prepare
+      run: mkdir build && mkdir build/workflow-guide 
+    - name: build workflow guide
+      uses: avattathil/asciidoctor-action@master
+      with:
+        program: "asciidoctor -D build/workflow-guide --backend=html5 --attribute=revnumber=${GITHUB_REF#refs/heads/}-$GITHUB_SHA --attribute=revdate=$(date +%F) workflow-guide/index.adoc"
+    - name: copy images
+      run: tar cf - workflow-guide/images | tar xfC - build
+    - name: archive workflow guide
+      uses: actions/upload-artifact@v2
+      with:
+        name: Workflow-Guide
+        path: build/workflow-guide/*
+        if-no-files-found: error
+    - name: extract branch name
+      id: extract_branch
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+    - name: deploy
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: peaceiris/actions-gh-pages@v3.7.0-8
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: build
+        destination_dir: ${{ steps.extract_branch.outputs.branch }}
+        enable_jekyll: true

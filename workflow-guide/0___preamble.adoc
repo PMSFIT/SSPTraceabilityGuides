@@ -1,0 +1,8 @@
+The SSP Traceability Workflow Guide is a supplementary documentation to the SSP Traceability Specification 1.0. While the SSP Traceability Specification 1.0 essentially describes a data format for STMD files in the sense of a normative document, the SSP Traceability Workflow Guide addresses how and in which way  Glue Paerticles are used in industrial practice. It thus addresses topics and answers questions that the SSP Traceability Specification 1.0 as a normative document cannot address and answer.
+
+This is a development version of the SSP Traceability Workflow Guide. Releases and issues can be found at github.com/PMSFIT/SSPTraceability.
+https://github.com/PMSFIT/SSPTraceability/releases[Releases] and https://github.com/PMSFIT/SSPTraceability/issues[issues] can be found on https://github.com/PMSFIT/SSPTraceability[github.com/PMSFIT/SSPTraceability].
+
+////
+Copyright notice and license information will go here.
+////

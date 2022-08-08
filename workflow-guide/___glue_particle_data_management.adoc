@@ -1,0 +1,57 @@
+== Glue Particle data management
+
+=== Versioning mechnisms for Glue Particles
+
+==== Situation
+
+A Glue Particle always represents the processing status at a specific point in time. By viewing an STMD file, it is not possible to determine what the contents of the file looked like at an earlier point in time. A Glue Particle does not store a version history. In order to be able to trace the history of a Glue Particle, several processing statuses of a Glue Particle must be stored separately so that the processing statuses can be viewed in their chronological order.
+
+<<im-versionmechnismsforglueparticle>> shows a typical version history for a Glue Particle in which the individual Glue Particle files have a different fill level.In the first version, only general information and information on the analysis phase is included, while in the subsequent versions the Glue Particle is gradually filled.  
+
+[#im-versionmechnismsforglueparticle]
+.Versioning mechnisms for Glue Particles
+image::VersioningMechanismForGlueParticle.png[500, 500]
+
+The STMD Glue Particle specification lists two different fields for entering a version information at the __SimulationTaskMetaData__ XML element.
+
+
+[#tb-simulationtaskmetadataattributes]
+.SimulationTaskMetaData element attributes (excerpt)
+[width="100%",options="header"]
+|===
+| Attribute name        | Optional / Mandatory | Atrribute description
+| version               | Mandatory            | Version of STMD format, 0.x for this pre-release.
+| fileversion           | Optional             | This attribute gives a version number for this file's content.
+|===
+
+The attribute __version__ represents the version of the STMD XML schema and is mandatory. The attribute __fileversion__ can be used to provide the Glue Particle with a version. However, it is not suitable for controlling a formal versioning process based on it. On the one hand the attribute is optional and on the other hand it can be edited freely. It is therefore an informal attribute.
+
+Since a Glue Particle does not support an explicit version mechanism according to the specification, technical mechanisms of either the operating system of a computer or a data management system must be used to represent a version history. 
+
+==== Workflow solution
+
+When building a Glue Particle version history supported by a data management system, the editing of a Glue Particle is typically done in conjunction with a check-out/check-in mechanism, where a Glue Particle is locked for editing by other persons or systems after check-out (exclusive check-out). On the one hand, this ensures that there is no inconsistency of information due to parallel processing, and on the other hand, it ensures that a Glue Particle is stored again where it was stored before processing by the check-in. The check-in also ensures that the Glue Particle is saved as a new version of the Glue Particle.
+
+<<im-glueparticleversionhistory>> shows the Glue Particle version history from <<im-versionmechnismsforglueparticle>> as it would appear in a data management system.
+
+[#im-glueparticleversionhistory]
+.Glue Particle version history
+image::GlueParticleVersionHistory.png[500, 500]
+
+<<im-checkoutcheckin>> illustrates how the check-out and check-in mechnism is utilized for editin Glue Particles. As long as a glue Particle version is checked out it is locked for changes by other persons or systems. Whe a Glue Particle version is checked back in  it is unlocked and saved a a new version.
+
+[#im-checkoutcheckin]
+.Check-out and check-in mechanism for editing Glue Particle
+image::CheckOutCheckIn.png[500, 500]
+
+==== Recommendation for working with Glue Particle versions and version histories
+
+The following recommendations for handling glue particle versions and the entire version history of a glue particle are to be understood as basic recommendations. This means that situation-related exceptions would be permissible in principle, as long as transparency is maintained in these exceptional cases.
+
+* In general, only the latest version of a Glue Particle should be edited, as otherwise inconsistencies within the version history may occur, which could make a later retrospective interpretation of the version history more difficult.
+* Ideally, it should only be possible to edit the latest version of a glue particle, i.e. it should only be possible to check out the latest version. 
+
+=== Workingwith Glue Particles variants
+
+=== Working with interconnected Glue Particles
+

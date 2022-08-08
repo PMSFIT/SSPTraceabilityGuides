@@ -1,0 +1,98 @@
+== Use cases for the handling of Glue Particle files
+
+=== Re-use of Glue Particles
+
+The re-use of Glue Particles, respectively of STMD files is one of the main applications of the Glue Particle approach.  Glue Particles reference resources that are consistent with each other for a given simulation or modeling task. These resources may be simulation models, parameters, test cases, tools used for the simulation, and other relevant resources. The compilation of these resources and additional information documenting procedures, assumptions and simplifications and respective rationales in a Glue Particle represents a considerable added value. This applies especially if a Glue Particle is entirely or partially re-used for nother simulation tasks. Four examples of re-using Glue Particles are introduced here.
+
+*  Re-use of Glue Particles for a simulation of a DC motor with the same objectives, conditions and resources
+*  Re-use of Glue Particles for a simulation of a DC motor with the same objectives but aother set of parameters
+*  Re-use of Glue Particles for a simulation  of a DC motor with the same objectives but another motor model
+*  Re-use of Glue Particles for a simulation with the same objectives in another simulation tool environment
+
+==== Re-use a Glue Particle unchanged
+
+#tbd#
+
+==== Re-use a Glue Particle and replace parameters
+
+A repetition of a simulation with another set of parameters requires a replacement of the parameter file by another parameter file in case the parameters are stored in a local digital file. Assuming the new parameter file may be named differently also the resource link must be adapted for referencing the new parameter file. In case the parameters are stored in an IT system, e.g. in a parameter database, only the resource link has to be adapted.
+
+*Preconditions*
+
+* The simulation objectives and requirements remain unchanged
+* The design specification for the parameters remains unchanged
+
+*Affected CSP sections*
+
+The parameters are implemented in the CSP step __Implement Parameters__ #(see also ???)# of the CSP phase __Implement and Asure Quality for Simulation Setup__ #(see also ???)# and the implemented parameters are referenced as an outpout of this CSP step. Therefore if the parameters are replaced by other parameters the CSP step __Implement Parameter__  ist primarily affected.
+Because the parameters have been replaced it is necessary to also check whether the replacement has any influences on the simulation setup integration. Additionally, there may be a formal necessity for re-verifying the information in the Glue Particle section __ImplementationPhase__ in order to assure and conform the simulation setup quality. 
+
+Primarily affected CSP sections are
+
+*  Implement Parameters
+
+Co-affected CSP sections are
+
+* Integrate Simulation Environment, Models, Parameters
+* Assure Simulation Setup Quality
+* Derive Simulation Setup Quality Verdict
+
+The affected CSP sectios are shown in <<#im-CSP-UC1>>.
+
+[#im-CSP-UC1]
+.Primarily affected CSP sections (red framed) and Co-affected CSP sections (light red framed )
+image::CSP-UC1.png[800, 800]
+
+*Pre-state Glue Particle*
+
+#Relevanter Ausschnitt vom Glue Particle#
+
+*User Operations*
+
+If parameters are replaced, the user must proceed as follows to ensure consistent documentation of the new simulation task.
+
+* In case the parameters sre provided as a local digital file replace the parameter file with a new parameter file
+* Replace the existing resource link with a new link, either to the new local digital file or to a new target in an IT system
+* Check whether the new parameters are syntactically compatible with the associated model and are semantically valid
+* Document in the __Procedure__ field of the STMD step section __ImplementParameter__ in the STMD phase stection __ImplementationPhase__ the replacement procedure, if applicable, e.g. __file physically replaced__ or __file edited__ 
+* Document in the __Rational__ field of the STMD step section __ImplementParameter__ in the STMD phase stection __ImplementationPhase__ the reason for the replacement of the parameters, e.g. __simulation with more precised parameters__ or __simulation with upscaled parameters to represent a larger DC motor__
+* Check whether the replacement of the parameters has any influences on its integration into the overall simulation setpup
+* Implement all required measures to assure the simulation setup quality with the new parameters
+* Document the assurance of the simulation setup quality in the STMD step section __AssureSimulationSetupQuality__ of the STMD phase section ImplementationPhase.
+
+*Tools Functionalities*
+
+A tool designed to handle Glue Particles resp. STMD files may support the user in the folliwing activities.
+
+* Replacement ot the parameters
+* Replacement resp. the editing of the resource link
+* Script-based compability check of the parameters
+* Filling out the __Procedure__ and the __Rationale__ field in the Glue Particle
+
+*Derivation chain*
+
+It is important that the trace to the original Glue Particle is preserved. Corresponding information should be entered in the STMD section __DerivationChain__ in the STDM section __GeneralInformation__. 
+
+*Handling metadata*
+
+This use case does not result in any specific additional requirements for handling metadata. The general requirements as documented in chapter ??? apply here. 
+
+*Data Management Operations*
+When a Glue Particle is revised, a new Glue Particle respectively a new version of the Glue Particle is actually created. 
+The link betwen a Glue Particle and the original Glue Particle might be managed and displayed at the data management level.
+
+*Post-state Glue Particle*
+
+#Relevanter Ausschnitt vom Glue Particle#
+
+*Post-conditions*
+
+* A new Glue Particle is available
+* The new Glue Particle has a trace to the Glue Particle from which it originated
+* The Glue Particle references new parameters
+* The procedure and the reason of the replacement are documented
+* The integrity of the entire simulation setup with the new parameters has been checked and confirmed according to the requirements of the Credible Simulation Process
+
+==== Re-use a Glue Particle and replace simulation model
+
+==== Re-use a Glue Particle and replace tool environment 

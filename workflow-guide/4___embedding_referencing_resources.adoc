@@ -1,0 +1,74 @@
+[#sec-EmbeddingAndReferencingResources]
+== Embedding and referencing resources
+
+A Glue Particle provides in several sections three alternative options to include information about resources, e.g., resources for inputs, outputs or procedure information.
+
+- Resource information may be written directly into the XML file. This procedure is suitable for single or very few atomic information.
+
+- The far more elegant way is to outsource the information into own files and to refer to this outsourced information from the Glue Particle file. This is more suitable for a bigger amount of information.
+
+- A third option is to link the Glue Particle file to relevant resources stored in IT systems.
+
+This chapter outlines how these options may be used and when best to use which of these options.
+
+=== Embedding resources
+
+Resources are specified using the _<stc:Resource>_ element. To embed information about resources directly in the Glue Particle, the element _<stc:Content>_ must be created within the element _<stc:Resource>_. Any content may then be created in the _<stc:Content>_ element.
+
+<<#im-embeddedresourceinformationschema>> shows how this construct is built up in the Glue Particle XML Schema for a Credible Simulation Process.
+
+[#im-embeddedresourceinformationschema]
+.Embedding resource information directly in a Glue Paerticle file
+image::embeddedResourceInformationSchema.png[800, 800]
+
+Direct embedding of resource information may be useful when the information is very compact and very limited, e.g., for single or very few information. <<im-embeddedresourceInformationExample>> provides an example for embedding resource information by means of a XML element _<stc:Content>_ Element. Note that the source attribute in the XML element _<stc:Resource>_ is not used. 
+
+[#im-embeddedresourceInformationExample]
+.Embedded resource information in a Glue Particle
+image::EmbeddedresourceInformationExample.png[800, 800]
+
+=== Referencing external resources
+
+As soon as a larger amount of information is to be specified per resource, it is no longer useful to write it directly into the Glue Particle XML file for several reasons.
+
+* The file size of a Glue Particle may increase significantly if too much resource information is embedded into a Glue Particle file. This effect would carry over to each new version of the Glue Particle with successive development of a Glue Particle.
+
+* Referencing resources that are external to the Glue Particle improves the possibilities for resource reuse. In principle, an external resource may be referenced by multiple Glue Particles simultaneously and consistently.
+
+* Many resources can be expressed in standardized data formats or are available in standardized formats. Therefore, it would be inefficient to recode this information from the standardized data format into a Glue Particle compatible format for embedding. It is more efficient to leave a resource in its standardized data format and thus also facilitate the processing of the information in the collaborative engineering processes.
+
+Basically, two types of resources may be distinguished.
+
+* *File-based resources:* These are resources that are available as a file and are added to the System Structure Package, the container for the Glue Particle.
+
+* *Remote ressources:* Resources that are managed in a data management system. From the point of view of the Glue Particle, these may also be referred to as remote resources.
+
+Regardless of which type of resource is to be referenced, the URI, i.e. either the relative path to a file within the Glue Particle container or the URL to a resource in a data management system, is written to the _source_ attribute of the XML element _<stc:resource>_. If the _source_ attribute is missing, the resource is provided inline as contents of the _<stc:Content>_ element, which must not be present otherwise
+
+<<#im-referencedResourcesSchema>> shows how this construct is represented in the Glue Particle XML Schema for a Credible Simulation Process.
+
+[#im-referencedResourcesSchema]
+.Referencing resources via URI
+image::ReferencedResourcesSchema.png[1000, 1000]
+
+Below are two examples of how the references are implemented.
+
+<<im-referencdLocalresourceInformationExample>> provides an example for referenced local resource information by means of the attribute _source_ in the a XML element _<stc:Resource>_ Element. Note that there do not exist any _<stc:content>_ elements in the XML element _<stc:Resource>_. 
+
+[#im-referencdLocalresourceInformationExample]
+.Referenced local resource information in a Glue Particle
+image::ReferencedLocalResourceInformationExample.png[800, 800]
+
+#Beispielcode Remote Resource#
+
+Whether file-based resource or a remote resource is used depends on the context. In the following, the respective context-specific advantages and disadvantages are described. 
+
+* When referencing to resources in managed source systems, there is no additional redundancy.
+
+* Since information in data management systems is usually managed with version accuracy, the reference to resources in source systems significantly improves traceability.
+
+* Since information in data management systems is usually stored persistently and is specially protected by backup mechanisms, the reference to resources in source systems provides improved security against data loss or undesired data modification.
+
+* On the other hand, the references to remote resources usually no longer work when the Glue Particle is exchanged across companies, as access to the source system then probably no longer works.
+
+* There may also be restrictions within the company if a consumer of a Glue Particle does not have access to the source system.

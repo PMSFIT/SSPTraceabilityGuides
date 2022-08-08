@@ -1,0 +1,37 @@
+= SSP Traceability Workflow Guide
+:doctype: book
+:imagesdir: images
+:sectnums:
+:sectnumlevels: 5
+:toc: left
+:toc-title: Table of content
+:toclevels: 5
+:xrefstyle: short
+:docinfo: shared
+:stylesheet: ssp-spec.css
+:stem: latexmath
+:source-highlighter: highlightjs
+:nofooter:
+:icons: font
+
+include::0___preamble.adoc[]
+
+include::1___introduction.adoc[]
+
+include::2___glue_particle_approach.adoc[]
+
+include::3___scenarios.adoc[]
+
+include::4___embedding_referencing_resources.adoc[]
+
+include::5___internal_system_couplings.adoc[]
+
+include::6___cross_company_exchange.adoc[]
+
+include::7___workflow_examples.adoc[]
+
+include::A___glossary.adoc[]
+
+include::B___literature.adoc[]
+
+include::X___backlog.adoc[]

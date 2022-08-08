@@ -1,0 +1,79 @@
+== Introduction
+
+Based on typical scenarios in the simulation of complex systems, the SSP Traceability Workflow Guide intends to show how simulation processes and model creation processes may be documented using the Glue Particle approach. A Glue Particle is an XML file in which all simulation or model creation relevant resources and information are described or linked. The goals of the glue particle approach are:
+
+* Traceable documentation of simulation and modeling processes for retrospective analyses
+
+* Replacement of order-relevant information and resources for simulation and modeling processes in cross-company collaboration
+
+* Transfer of simulation or modeling process relevant information and resources within the company between departments or IT tools
+
+* Reuse of simulation-relevant resources and informtion (e.g., models, parameters, tools, etc.) for simulation repetition
+
+* Reuse resources such as simulation models or parameters for similar simulations.
+
+#Align these gpals with the scenarios in chapter <<SSP collaboration and traceability scenarios>>#
+
+
+
+
+
+The SSP Traceability Workflow Guide intends to provide support on how to handle Glue Particles with the focus on workflows and processes in industrial practice. In industrial practice topics come into focus that go beyond the scope of a data format specification, including the topics in the following list.
+
+- Consistency and quality assurance
+
+- Glue Particle data management
+
+- Dealing with complex multi Glue Particle constellations
+
+- Retrospective interpretation of Glue Particles
+
+- Reuse of Glue Particles
+
+- Exchange of Glue Particles between IT tools and systems
+
+- Cross-company exchange of Glue Particles
+
+- and many more
+
+This is where the SSP Traceability Workfkow Guide comes in. The Workflow Guide addresses these issues and provides recommendations for handling Glue Particles in industrial practice.
+
+=== Definition of esential term
+
+In the context of the development of the SSP Traceability Standrd, the terms scenarios, workflow, process and use case are frequently used. These terms will be explained and distinguished from each other but also positioned in relation to each other.
+
+*Scenario*
+
+A scenario describes the situation from a business perspective in which Glue Particles may be used and offer or generate significant added value. The description of a scenario includes the naming of the organization or roles involved as well as the business goals of the organization or roles involved.
+
+The term scenario in this context should not be confused with the term scenario as used in the context of automated and autonomous driving. In automated and autonomous driving, a scenario refers to a complex traffic situation with a number of moving and non-moving objects in the road space and a complex constellation of many boundary conditions in which an automated or autonomous vehicle is to move.
+
+*Workflow*
+
+The workflow describes how Glue Particle will be used in each scenario and how they may provide and generate the expected added value. The process flow of each scenario is described by at least one, or if necessary, by several alternative or complementary workflows. Essentially, process diagrams and additional textual descriptions are used. Here, the focus is on the process-related handling of the Glue Particle
+
+*Use case*
+
+A use case describes how the Glue Particle is handled in very specific, narrowly defined situations, or how it is interacted with manually or technically. The main question here is who does what with the Glue Particle and when, and what the respective result of the interaction is. The focus here is on the operational handling of the glue particle.
+
+*Process*
+
+The term process may be used on different levels and means that interrelated activities, interactions and communications have a certain causal and temporal sequence. In addition, the term may also be part of fixed and thus predetermined terms, such as commissioning process, requirements process or export process. The term process may therefore appear in this documentation in the context of scenarios as well as in the context of workflows and use cases.
+
+
+
+=== Conventions used in this document
+
+* The version number of this documentation is to be interpreted according to the _Semantic Versioning Specification (SemVer) 2.0.0_ <<SEMVER200>>.
+
+* The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, *RECOMMENDED*, *NOT RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in _RFC 2119_ <<RFC2119>>.
+
+=== Document structure
+
+#Hier zum Schluss noch die Dokumentstruktur einführen#
+
+##
+* Glue Particle Approach
+* Szenarien und Workflows
+* Use Cases für GP Handlig
+##

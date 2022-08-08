@@ -1,0 +1,39 @@
+[glossary]
+== Glossary
+
+The following list of terms and, where given, abbreviations serves to explain typical technical terms related to the Glue Particle approach. This list explicitly does not represent any technical vocabulary from the engineering context.
+
+[#tb-termsAndAbbreviations]
+.Terms and abbreviations
+[width="100%",options="header"]
+|===
+| Term |  Abbreviation | Explanation
+| Boundary model |  | Models of the elements whose interaction with the core model (SuT) should be taken into account
+| Core model     |  | The simulation model that is to represent the system under test. In the case of SW the SW
+| Credible Modeling Process  | CMP |
+| Credibility documentation     |  | 
+| Credibility of simulation     |    | #see chapter CSP#
+| Credible Simulation Process  | CSP |
+| Environment model     |  | Subset of boundary models: Models of the (non-technical) environment in which a system under test operates (roads, traffic, weather, etc.)
+| Glue Particle     |  | #entfernen#
+| Intellectual Property   | IP |
+| Model     |  | in this context always simulation model
+| Model Identification Card  | MIC | Standard/recommodation from SystemX for Model Meta Data
+| Modeling request     |  | 
+| Modeling task     |  | 
+| Product Lifecycle Management  | PLM |
+| Quality     |  | #Schauen was in CSP schon definiert ist#
+| Simulation environment     |  | The "simulation environment" describes the complete tooling that is needed to run and evaluate a simulation  (simulator, pre-processing, post-processing, test tool, data- and workflow management, ...)without simulation models.
+| (Simulation environment) module     |   | Elements of the simulation infrastructure which are used and have to be developed or adapted. this can be done in separate subprocesses (similar to model development process), like pre/post-processing functions
+| Simulation-based Engineering Task | SbET |
+| Simulation Model Metadata | SMMD  |
+| Simulation objectives     |  | 
+| Simulation request     |  | 
+| Simulation setup    |  | The simulation setup includes all elements needed to run and evaluate a simulation. These are the simulation models, the parameters, the test cases, the simulation environment and their interaction. The interaction is usually described in workflows.
+| Simulation task    |  |
+| Simulation Task Meta Data | STMD |
+| Single decision process     |  |
+| System under Test  | SuT | Determination of what is the system to be considered (DC motor, SW)
+| Test case     |  | Typical applications of the CSP are System Analysis, Optimization and Test. The CSP differs here only in some specific aspects. For better readability, the synonym "test" is used for System Analysis, Optimization and Test.
+| Verification and Validation  | V&V |
+|===

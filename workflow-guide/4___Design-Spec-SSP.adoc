@@ -1,4 +1,4 @@
-[#Design Specification with SSP, SSP-Traceability]
+[#Design-Spec-SSP]
 == Design Specification with SSP, SSP-Traceability
 
 The SSP standard is intended to support

@@ -1,0 +1,34 @@
+[#Design Specification with SSP, SSP-Traceability]
+== Design Specification with SSP, SSP-Traceability
+
+The SSP standard is intended to support
+1.	Exchange of interconnected simulation models and their parameterization
+2.	Support of the design by specifying empty components through their interface templates
+In a simulation request, it is generally sufficient to describe the simulation task and its objective. However, no further specifications are made regarding the type of simulation and the models used (as in the example in Figures 5+ 6).
+However, more detailed information, such as design specifications or parts of the implementation and test environments, is often specified. In this simple example, the electromagnetic part of the DC motor is transferred as an FMU, while only the shell description with interfaces is provided for the mechanical part. It makes sense to use LS SSP-Traceability directly as a container for the artifacts here. The FMUs whose interconnection is specified as SSD are linked as inputs to the implementation phase (Figure 16). This approach makes it possible to trace what was input and what was created in the simulation task itself.
+
+
+[#im-DesignSpec]
+.Transfer of design and implementation specifications
+image::DesignSpec.png[1000, 1000]
+
+== Example DC-Motor using FMU, SSP, SSP-Traceability
+
+The executable example of the DC motor is available as Appendix X.
+As an extended example, Appendix Y also contains the design specification and the test environment for the mechanical part of the DC motor. This example also includes a large amount of documentation and metadata. The amount of documentation depends on the required level of traceability and comprehensibility, as this involves a certain amount of effort.
+
+
+== Data Management, Versioning
+
+=== SSP-Traceability for Data Exchange
+
+All common data management systems support configuration, versioning, metadata, and labeling, especially for metadata, but usually as proprietary specific implementations. The SSP Traceability Standard now supports the exchange of information between these systems and to and between simulation tools in a standardized form (Figure 17)
+
+[#im-DataManagement]
+.LS SSP-Traceability for data exchange in heterogeneous environments
+image::DataManagement.png[1000, 1000]
+
+=== Using GitLab, GitHub for Data Management
+
+A simple implementation of data management when using GIT is that the zip structure is unzipped directly in GIT and stored and managed in this way.
+

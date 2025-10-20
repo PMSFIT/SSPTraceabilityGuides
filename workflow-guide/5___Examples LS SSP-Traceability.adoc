@@ -1,0 +1,22 @@
+[#Examples LS SSP-Traceability]
+== Examples LS SSP-Traceability
+
+All examples are based on the simulation task of a DC-motor (Figure 18)
+
+[#im-DC-motor]
+.Simulation task is pre-selection of a DC-motor 
+image::DC-motor.png[1000, 1000]
+
+*List of Examples*
+
+=== Linking of Sources
+
+=== Usage of metadata
+
+=== Simulation request with design specification
+
+=== Simulation of a DC-motor with basic additional information
+
+=== Example with full information set, design specification, simulation
+
+

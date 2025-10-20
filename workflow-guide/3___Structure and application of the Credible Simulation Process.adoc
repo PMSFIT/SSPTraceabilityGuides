@@ -1,0 +1,166 @@
+[#sec-Structure and application of the Credible Simulation Process]
+== Structure and application of the Credible Simulation Process
+
+A detailed description of the Credible Simulation Process Framework is available at (link). Figure 4 shows a more detailed structure of the Credible Simulation Process. Each phase is further divided into sub-elements called process steps. These steps have a uniform structure, as is also known from process descriptions
+
+*	Inputs
+*	Procedure
+*	Rationale 
+*	Outputs	
+
+The STMD schema maps this structure. In the application, the existing information of a simulation task can now be linked accordingly.
+
+
+[#im-CSP-details]
+.Detailed structure of the Credible Simulation Process
+image::GlueParCSP-details.png[1000, 1000]
+
+
+== Allocation and linking of information
+
+
+[#im-SSP-Trace-structure]
+.LS SSP-Traceability file structure
+image::SSP-Trace-structure.png[1000, 1000]
+
+
+The SSP structure has been supplemented with a directory extra for layered standard extensions. Each layered standard has its own specific folder, e.g., for the simulation task org.ssp-standard.ssp-traceability.stmd. The necessary information and files specific to the SSP layered standard are then stored in this folder. 
+Figure 5 shows the structure for the example explained below.
+For ease of understanding, the files are numbered according to their logical order. The last file shown here is the simulation task meta data file (.stmd), which contains the structure and links of the information.
+
+=== Linking information in the STMD file
+
+Figure 6 shows how and where information is linked in the STMD schema.
+The STMD XML schema maps a simulation process. Information and files can now be linked to the appropriate locations within it according to their content.
+
+[#im-STMD-Links]
+.Linking information to the STMD file
+image::STMD-Links.png[1000, 1000]
+
+
+=== Information from Simulation Request
+
+A simulation request typically contains administrative information and information describing the simulation task.
+The administrative information is necessary for linking to the commissioning processes, development, (name of the product, product development, simulation task, commissioning agency, etc.).
+When describing the simulation task, information is required about what is to be examined and simulated, the name of the item to be simulated, and the objectives of the simulation. This information from the simulation request can be provided as a single file or separated into administrative and content-related information. 
+The administrative information is linked under administrative information.
+The information describing the simulation task is linked under Input in the Analysis Phase. Any number of sources can be linked here, e.g., a Markdown description and a supplementary PDF. If the information is only available in a single file, this file can be linked to several places.
+
+
+=== Linking to phases, steps, inputs, outputs
+
+The location of the links to the information should allow assignment to specific phases. For larger simulation tasks, a distinction is made within the phases as to whether this information is specific to the models, parameterization, etc. These steps have a uniform structure, as is also known from process descriptions
+
+* Inputs
+*	Procedure
+*	Outputs
+*	Rationale
+
+If complete traceability of all details is required, the following should be linked under
+
+*	Inputs: 
+** all information necessary for processing
+*	Procedure: 
+** all information used for processing
+*	Outputs: 
+** the results that were achieved
+*	Rationale: 
+** information on why it was done this way is important for quality assurance
+
+In the example, this is done for the Analysis step.
+The results under Output are then linked as input to the subsequent phase, Steps (see markings in Figure 6).
+
+
+In practice, for example, in the design specification phase, there is often only one common source of information for models, parameters, test cases, and simulation environment (tooling), where the interaction is also described. In such cases, this information should be linked in the simulation integration step.
+
+If complete traceability of all details is not required, however, at least the information in the outputs of all phases should be available. This also enables traceability, with the restriction that it is not possible to directly trace which information was used to achieve the output. 
+
+
+== Metadata
+
+Metadata serves to provide keywords. In the LS SSP-Traceability Layered, the classification element was introduced for this purpose. Metadata (classifications) can also be combined into a separate Simulation Resource Meta Data (SRMD) file.
+
+=== Usage of Metadata
+
+*	Metadata can be created and used directly as classifications
+*	Created and linked as an SRMD file
+*	Attached to linked sources as classifications (metadata)
+** See Figure 7, red frame
+*	Metadata as an SRMD file in FMUs, 
+
+
+=== Metadata using example General (administrative) Information
+
+The following example shows that there are several options for placing administrative information in the STMD file, 
+see Phase Admin
+
+*	As classifications
+**	See line 7 onwards in Figure 7
+* As an srmd file
+** See Figures 7 and 8, green frame
+* Any format, e.g., Markdown
+** Line 5 in Figure 7 and figure 9
+
+[#im-Admin-classif]
+.Use of classifications for metadata
+image::Admin-classif.png[1000, 1000]
+
+
+[#im-Admin-SRMD]
+.SRMD file for describing metadata
+image::Admin-SRMD.png[1000, 1000]
+
+[#im-Admin-markdown]
+.Administrative information as an md file
+image::Admin-markdown.png[1000, 1000]
+
+The options are equivalent. Which approach you choose depends on the form in which the information is available and how the simulation task is to be further evaluated. A request file can also be included, and some relevant metadata can be attached as classifications. Here, however, it is important to note what is the single source of truth and what are copies or interpretations in the metadata.
+
+=== Structuring, multiplicity of metadata
+
+The LS SSP-Traceability supports metadata with the classification approach (details see at the specification). Multiplicity of classifications are possible, so for example the classification parameter can be used several times to list a set of parameters. 
+The classification schema was deliberately kept simple so that it can be supported relatively easily by tools. Therefore, it does not support sub-structuring or other features. The ordering of classification has no syntactical meaning, if  a kind of grouping is needed, like for two tools to express their names and version, the Modelica convention of brackets and numbers can be used (see figure 10).
+
+[#im-Metadata-Multi]
+.Sets, multiplicity of metadata, classifications
+image::Metadata-Multi.png[1000, 1000]
+
+
+=== Basic traceability of a simulation task using metadata
+
+The information and metadata required depend on the use case. Figures 11 and 12 describe a set of metadata that is the minimum required for basic traceability. This metadata can be provided with little effort. 
+
+[#im-GlueParticleStructureSchema]
+.Location of metadata in the CSP and their sources
+image::GlueParticleStructureSchema.png[1000, 1000]
+
+
+[#im-Metadata-basic-CSP]
+.Set of metadata required for basic traceability
+image::Metadata-basic-CSP.png[1000, 1000]
+
+=== Usage of metadata for search and reuse
+
+This minimum set of metadata (Figure 12) can already be used to perform basic evaluations, searches and reuse (Figuer 13 + 14). If this metadata is attached to the corresponding sources, further information can be obtained by analyzing the sources as needed.
+
+*Usecases for basic Traceability*
+*	I am looking for the corresponding simulations for a project
+*	For which applications was Model Z used?
+*	In which simulations was a tool used in Version X with models of Version Y
+*	Which existing simulation settings can possibly be used as a template for a new simulation task?
+* ...
+
+[#im-Metadata-Search]
+.Usage of metadata for search and evaluation
+image::Metadata-Search.png[1000, 1000]
+
+
+[#im-Metadata-Reuse]
+.Usage of metadata for reuse of simulation
+image::Metadata-Reuse.png[1000, 1000]
+
+
+[#im-Metadata-usage]
+.“Execution dump” from simulation tool as source for metadata
+image::Metadata-usage.png[1000, 1000]
+

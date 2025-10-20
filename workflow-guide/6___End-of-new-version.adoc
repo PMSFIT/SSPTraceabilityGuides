@@ -1,4 +1,4 @@
-[#End of new version]
+[#End-of-new-version]
 == End of new version
 
 An exchange of data, especially engineering data, is usually linked to a business relationship between the companies involved, or the need for an exchange of data is conditioned by a business relationship. This is also the case with the exchange of Glue Particles.

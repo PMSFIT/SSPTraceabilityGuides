@@ -1,4 +1,4 @@
-[#sec-Objectives, structure, and application of SSP traceability]
+[#sec-Objectives-structure]
 == Objectives, structure, and application of SSP traceability
 
 Objectives:

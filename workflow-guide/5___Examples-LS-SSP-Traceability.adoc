@@ -1,4 +1,4 @@
-[#Examples LS SSP-Traceability]
+[#Examples-LS-SSP-Traceability]
 == Examples LS SSP-Traceability
 
 All examples are based on the simulation task of a DC-motor (Figure 18)

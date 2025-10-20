@@ -16,13 +16,13 @@ The [workflow guide][workflow] is currently maintained on
 based on the [SSP Traceability Specification][spec].
 
 The [specification][spec] is maintained on [GitHub][github] and is
-published [here][spec]. It is based on the [SSP 1.0][SSP10] standard.
+published [here][spec]. It is based on the [SSP 2.0][SSP20] standard.
 
 In future additional guides might be integrated into this repository.
 
 [SSP]: https://ssp-standard.org/
-[SSP10]: https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf
+[SSP20]: https://ssp-standard.org/docs/2.0/
 [githubworkflow]: workflow-guide/index.adoc
 [workflow]: https://pmsfit.github.io/SSPTraceabilityGuides/main/workflow-guide/
-[github]: https://github.com/PMSFIT/SSPTraceability/
-[spec]: https://pmsfit.github.io/SSPTraceability/master/
+[github]: https://github.com/modelica/ssp-ls-traceability/
+[spec]: https://ssp-standard.org/ssp-ls-traceability/1.0.0/

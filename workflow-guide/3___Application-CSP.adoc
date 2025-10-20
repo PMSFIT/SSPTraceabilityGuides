@@ -1,4 +1,4 @@
-[#sec-Structure and application of the Credible Simulation Process]
+[#sec-Application-CSP]
 == Structure and application of the Credible Simulation Process
 
 A detailed description of the Credible Simulation Process Framework is available at (link). Figure 4 shows a more detailed structure of the Credible Simulation Process. Each phase is further divided into sub-elements called process steps. These steps have a uniform structure, as is also known from process descriptions

@@ -16,7 +16,7 @@ The CSP is therefore a documentation schema and not a chronological process desc
 
 [#im-CSP-recoursions]
 .The Credible Simulation Process and the STMD Format supports the logical order
-image::images\CSP-recoursions.png[1000, 1000]
+image::CSP-recoursions.png[1000, 1000]
 
 
 Figure 2 shows how the information, the CSP and the coordinated SSP traceability data format Simulation Task Meta Data (STMD) interact. The STMD format is one of the information. Data are linked to the STMD XML schema file according to their type. This STMD XML file with the links can then be saved or exchanged and is the basic building block for traceability.

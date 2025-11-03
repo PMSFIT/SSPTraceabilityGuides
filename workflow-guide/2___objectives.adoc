@@ -22,9 +22,8 @@ The LS SSP-Traceability requires that the importing and exporting tools and data
 However, no specifications are made as to how the internal data management tool must be structured.
 
 
-[#im-CSP-workflow]
 .Linkage between information, Credible Simulation Process and STMD
-image::CSP-workflow.png[1000, 1000]
+image::CSP-workflow.png[CSP-workflow, 1000, 1000]
 
 
 The following three layers should be distinguished in implementation and application
@@ -36,9 +35,9 @@ The following three layers should be distinguished in implementation and applica
 * Workflow
 **	Interfaces corresponding to the application
 
-[#im-CMP-3Layer]
+
 .Use of a 3- layer approach for implementation 
-image::CMP-3Layer.png[1000, 1000]
+image::CMP-3Layer.png[CMP-3Layer, 1000, 1000]
 
 The LS SSP-Traceability focuses on supporting the process level. Clear logical structuring as the basis for traceability. The data is linked to the SSP Traceability Schema. Links to any data management system can be used. For exchange with partners who do not have direct access to these systems, this data can be packaged and sent as part of an SSP container. The specifications of this structure are part of the LS SSP-Traceability specification. Users should only enter their information via a workflow interface and use the Credible Simulation Process indirectly. At the workflow interface, the information should be provided in the form and order that corresponds to typical use. Here, a mapping of names that are intuitively understandable for the user in the input masks to the IT systems' unique naming conventions should also take place. These naming conventions are usually not directly intuitive or cumbersome for the user to understand.
 The user guide focuses on the application and use of the STMD schema that support the process level.

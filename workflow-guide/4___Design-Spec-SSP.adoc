@@ -8,7 +8,6 @@ In a simulation request, it is generally sufficient to describe the simulation t
 However, more detailed information, such as design specifications or parts of the implementation and test environments, is often specified. In this simple example, the electromagnetic part of the DC motor is transferred as an FMU, while only the shell description with interfaces is provided for the mechanical part. It makes sense to use LS SSP-Traceability directly as a container for the artifacts here. The FMUs whose interconnection is specified as SSD are linked as inputs to the implementation phase (Figure 16). This approach makes it possible to trace what was input and what was created in the simulation task itself.
 
 
-[#im-DesignSpec]
 .Transfer of design and implementation specifications
 image::DesignSpec.png[1000, 1000]
 

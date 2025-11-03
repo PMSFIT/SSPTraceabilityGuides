@@ -1,4 +1,3 @@
-[#sec-objectives]
 == Objectives, structure, and application of SSP traceability
 
 Objectives:

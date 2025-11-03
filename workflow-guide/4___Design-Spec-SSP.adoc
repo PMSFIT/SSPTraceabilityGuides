@@ -9,7 +9,7 @@ However, more detailed information, such as design specifications or parts of th
 
 
 .Transfer of design and implementation specifications
-image::DesignSpec.png[1000, 1000]
+image::DesignSpec.png[DesignSpec,1000, 1000]
 
 == Example DC-Motor using FMU, SSP, SSP-Traceability
 

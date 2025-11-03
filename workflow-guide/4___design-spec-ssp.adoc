@@ -1,4 +1,3 @@
-[#Design-Spec-SSP]
 == Design Specification with SSP, SSP-Traceability
 
 The SSP standard is intended to support
@@ -23,9 +22,8 @@ As an extended example, Appendix Y also contains the design specification and th
 
 All common data management systems support configuration, versioning, metadata, and labeling, especially for metadata, but usually as proprietary specific implementations. The SSP Traceability Standard now supports the exchange of information between these systems and to and between simulation tools in a standardized form (Figure 17)
 
-[#im-DataManagement]
 .LS SSP-Traceability for data exchange in heterogeneous environments
-image::DataManagement.png[1000, 1000]
+image::DataManagement.png[DataManagement, 1000, 1000]
 
 === Using GitLab, GitHub for Data Management
 

@@ -1,11 +1,9 @@
-[#Examples-LS-SSP-Traceability]
 == Examples LS SSP-Traceability
 
 All examples are based on the simulation task of a DC-motor (Figure 18)
 
-[#im-DC-motor]
 .Simulation task is pre-selection of a DC-motor 
-image::DC-motor.png[1000, 1000]
+image::DC-motor.png[DC-motor, 1000, 1000]
 
 *List of Examples*
 

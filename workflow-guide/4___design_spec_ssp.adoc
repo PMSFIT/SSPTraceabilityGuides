@@ -10,22 +10,22 @@ However, more detailed information, such as design specifications or parts of th
 .Transfer of design and implementation specifications
 image::DesignSpec.png[DesignSpec,1000, 1000]
 
-== Example DC-Motor using FMU, SSP, SSP-Traceability
+=== Example DC-Motor using FMU, SSP, SSP-Traceability
 
 The executable example of the DC motor is available as Appendix X.
 As an extended example, Appendix Y also contains the design specification and the test environment for the mechanical part of the DC motor. This example also includes a large amount of documentation and metadata. The amount of documentation depends on the required level of traceability and comprehensibility, as this involves a certain amount of effort.
 
 
-== Data Management, Versioning
+=== Data Management, Versioning
 
-=== SSP-Traceability for Data Exchange
+==== SSP-Traceability for Data Exchange
 
 All common data management systems support configuration, versioning, metadata, and labeling, especially for metadata, but usually as proprietary specific implementations. The SSP Traceability Standard now supports the exchange of information between these systems and to and between simulation tools in a standardized form (Figure 17)
 
 .LS SSP-Traceability for data exchange in heterogeneous environments
 image::DataManagement.png[DataManagement, 1000, 1000]
 
-=== Using GitLab, GitHub for Data Management
+==== Using GitLab, GitHub for Data Management
 
 A simple implementation of data management when using GIT is that the zip structure is unzipped directly in GIT and stored and managed in this way.
 

@@ -18,20 +18,14 @@ include::0___preamble.adoc[]
 
 include::1___introduction.adoc[]
 
-include::2___glue_particle_approach.adoc[]
+include::2___objectives.adoc[]
 
-include::3___scenarios.adoc[]
+include::3___application_csp.adoc[]
 
-include::4___embedding_referencing_resources.adoc[]
+include::4___design_spec_ssp.adoc[]
 
-include::5___internal_system_couplings.adoc[]
-
-include::6___cross_company_exchange.adoc[]
-
-include::7___workflow_examples.adoc[]
+include::5___examples_ls_ssp_traceability.adoc[]
 
 include::A___glossary.adoc[]
 
 include::B___literature.adoc[]
-
-include::X___backlog.adoc[]

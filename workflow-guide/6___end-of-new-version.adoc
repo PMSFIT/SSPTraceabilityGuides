@@ -1,8 +1,0 @@
-== End of new version
-
-An exchange of data, especially engineering data, is usually linked to a business relationship between the companies involved, or the need for an exchange of data is conditioned by a business relationship. This is also the case with the exchange of Glue Particles.
-
-A cross-company exchange of information typically couples two different processes using the transferred information. On the one hand, there is a process at the customer's side, e.g., a simulation process, and on the other hand, there is a process on the contractor's side, e.g., a modeling process. At the customer's side, a simulation is carried out as part of a product development and for this simulation the simulation model of a supplied component is required. The simulation model is to be provided by the supplier. The simulation process and the modeling process are linked, for example, by a modeling order or a model request and by the transfer of the model to the customer. #<<>> illustrates this exchange constellation on a high level.#
-
-
- 

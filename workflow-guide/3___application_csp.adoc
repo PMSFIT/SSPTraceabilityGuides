@@ -116,6 +116,7 @@ The options are equivalent. Which approach you choose depends on the form in whi
 The LS SSP-Traceability supports metadata with the classification approach (details see at the specification). 
 It is important that namespaces are defined using “type.” This makes it possible to define specific attributes as desired and means that they do not have to be aligned globally. Multiplicity of classifications are possible, so for example the classification parameter can be used several times to list a set of parameters. 
 The classification schema was deliberately kept simple so that it can be supported relatively easily by tools. Therefore, it does not support sub-structuring or other features. The ordering of classification has no syntactical meaning.
+
 * If structuring is needed, this can be done using naming conventions, e.g., using dots (execution.tool.name and execution.tool.version).
 * If a kind of grouping is needed, like for two tools to express their names and version, the Modelica convention of brackets and numbers can be used (see figure 10).
 

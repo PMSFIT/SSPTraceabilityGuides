@@ -2,42 +2,84 @@ name: Build Guides
 
 on:
   push:
-    branches-ignore: [ 'temp/*' ]
+    branches-ignore:
+      - 'temp/*'
+    tags:
+      - '*'
   pull_request:
-    branches: [ main ]
+    branches:
+      - 'main'
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build-guides:
-    name: Build SSP Traceability Guides
-
-    runs-on: ubuntu-22.04
-
+  
+  generate-html:
+    runs-on: ubuntu-24.04
     steps:
-    - name: checkout
-      uses: actions/checkout@v4
-    - name: prepare
-      run: mkdir build && mkdir build/workflow-guide 
-    - name: build workflow guide
+
+    - name: Checkout
+      uses: actions/checkout@v6
+      with:
+        submodules: recursive
+
+    - name: Generate revnumber
+      run: |
+        [[ $GITHUB_REF_TYPE == "tag" ]] && REVNUMBER=${GITHUB_REF:11} || REVNUMBER=${GITHUB_SHA:0:7}
+        echo GITHUB_SHA:      $GITHUB_SHA
+        echo GITHUB_REF_TYPE: $GITHUB_REF_TYPE
+        echo GITHUB_REF:      $GITHUB_REF
+        echo REVNUMBER:       $REVNUMBER
+        echo "REVNUMBER=$REVNUMBER" >> $GITHUB_ENV
+
+    - name: Create build directory
+      run: |
+        mkdir -p build/workflow-guide/images
+
+    - name: Generate HTML
       uses: avattathil/asciidoctor-action@master
       with:
-        program: "asciidoctor -D build/workflow-guide --backend=html5 --attribute=revnumber=${GITHUB_REF#refs/heads/}-$GITHUB_SHA --attribute=revdate=$(date +%F) workflow-guide/index.adoc"
-    - name: copy images
-      run: tar cf - workflow-guide/images | tar xfC - build
-    - name: archive workflow guide
-      uses: actions/upload-artifact@v4
+        program: "asciidoctor --base-dir workflow-guide --destination-dir=../build/workflow-guide --backend=html5 --attribute=revnumber=${{ env.REVNUMBER }} --attribute=revdate=$(date +%F) workflow-guide/index.adoc"
+
+    - name: Copy resources
+      run: |
+        cp workflow-guide/images/* build/workflow-guide/images
+
+    - name: Create ZIP archive
+      uses: actions/upload-artifact@v6
       with:
         name: Workflow-Guide
         path: build/workflow-guide/*
         if-no-files-found: error
-    - name: extract branch name
+
+    - name: Extract branch name
       id: extract_branch
       shell: bash
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-    - name: deploy
+      run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
+
+    - name: Move to published directory
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      uses: peaceiris/actions-gh-pages@v3.7.0-8
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: build
-        destination_dir: ${{ steps.extract_branch.outputs.branch }}
-        enable_jekyll: true
+      shell: bash
+      run: mkdir _site && mv build _site/${{ steps.extract_branch.outputs.branch }}
+
+    - name: Upload Pages artifact
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: actions/upload-pages-artifact@v4
+
+  publish-html:
+    needs: generate-html
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-24.04
+    steps:
+
+    - name: Deploy to Github Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

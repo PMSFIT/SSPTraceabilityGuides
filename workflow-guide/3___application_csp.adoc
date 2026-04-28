@@ -76,7 +76,7 @@ If complete traceability of all details is not required, however, at least the i
 
 === Metadata
 
-Metadata serves to provide keywords. In the LS SSP-Traceability Layered, the classification element was introduced for this purpose. Metadata (classifications) can also be combined into a separate Simulation Resource Meta Data (SRMD) file.
+Metadata serves to provide keywords. In the LS SSP-Traceability Layered Standard, the classification element was introduced for this purpose. Metadata (classifications) can also be combined into a separate Simulation Resource Meta Data (SRMD) file.
 
 ==== Usage of Metadata
 

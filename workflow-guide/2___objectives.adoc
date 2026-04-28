@@ -27,9 +27,6 @@ This STMD XML file with the links can then be saved or exchanged and forms the b
 
 LS SSP Traceability requires that the import and export tools as well as the data management systems support this standard and this structure. However, no specifications are provided regarding how the internal data management tool must be structured.
 
-Translated with DeepL.com (free version)
-
-
 .Linkage between information, Credible Simulation Process and STMD
 image::CSP-workflow.png[CSP-workflow, 1000, 1000]
 

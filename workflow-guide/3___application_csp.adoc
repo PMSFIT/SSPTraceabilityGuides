@@ -9,17 +9,17 @@ A detailed description of the Credible Simulation Process Framework is available
 
 The STMD schema maps this structure. In the application, the existing information of a simulation task can now be linked accordingly.
 
-
+[#im-glueparcsp-details]
 .Detailed structure of the Credible Simulation Process
-image::GlueParCSP-details.png[GlueParCSP-details, 1000, 1000]
+image::GlueParCSP-details.png[]
 
 
 === Allocation and linking of information
 
 
-
+[#im-ssp-trace-structure]
 .LS SSP-Traceability file structure
-image::SSP-Trace-structure.png[SSP-Trace-structure, 1000, 1000]
+image::SSP-Trace-structure.png[]
 
 
 The SSP structure has been supplemented with a directory extra for layered standard extensions. Each layered standard has its own specific folder, e.g., for the simulation task org.ssp-standard.ssp-traceability.stmd. The necessary information and files specific to the SSP layered standard are then stored in this folder. 
@@ -28,12 +28,13 @@ For ease of understanding, the files are numbered according to their logical ord
 
 ==== Linking information in the STMD file
 
+
 Figure 6 shows how and where information is linked in the STMD schema.
 The STMD XML schema maps a simulation process. Information and files can now be linked to the appropriate locations within it according to their content.
 
-
+[#im-stmd-links]
 .Linking information to the STMD file
-image::STMD-Links.png[STMD-Links, 1000, 1000]
+image::STMD-Links.png[]
 
 
 ==== Information from Simulation Request
@@ -99,15 +100,17 @@ see Phase Admin
 * Any format, e.g., Markdown
 ** Line 5 in Figure 7 and figure 9
 
+[#im-admin-classif]
 .Use of classifications for metadata
-image::Admin-classif.png[Admin-classif, 1000, 1000]
+image::Admin-classif.png[]
 
-
+[#im-admin-srmd]
 .SRMD file for describing metadata
-image::Admin-SRMD.png[Admin-SRMD, 1000, 1000]
+image::Admin-SRMD.png[]
 
+[#im-admin-markdown]
 .Administrative information as an md file
-image::Admin-markdown.png[Admin-markdown, 1000, 1000]
+image::Admin-markdown.png[]
 
 The options are equivalent. Which approach you choose depends on the form in which the information is available and how the simulation task is to be further evaluated. A request file can also be included, and some relevant metadata can be attached as classifications. Here, however, it is important to note what is the single source of truth and what are copies or interpretations in the metadata.
 
@@ -120,20 +123,22 @@ The classification schema was deliberately kept simple so that it can be support
 * If structuring is needed, this can be done using naming conventions, e.g., using dots (execution.tool.name and execution.tool.version).
 * If a kind of grouping is needed, like for two tools to express their names and version, the Modelica convention of brackets and numbers can be used (see figure 10).
 
+[#im-metadata-multi]
 .Sets, multiplicity of metadata, classifications
-image::Metadata-Multi.png[Metadata-Multi, 1000, 1000]
+image::Metadata-Multi.png[]
 
 
 ==== Basic traceability of a simulation task using metadata
 
 The information and metadata required depend on the use case. Figures 11 and 12 describe a set of metadata that is the minimum required for basic traceability. This metadata can be provided with little effort. 
 
+[#im-glueparticlestructureschema]
 .Location of metadata in the CSP and their sources
-image::GlueParticleStructureSchema.png[GlueParticleStructureSchema, 1000, 1000]
+image::GlueParticleStructureSchema.png[]
 
-
+[#im-metadata-basic-csp]
 .Set of metadata required for basic traceability
-image::Metadata-basic-CSP.png[Metadata-basic-CSP, 1000, 1000]
+image::Metadata-basic-CSP.png[]
 
 ==== Usage of metadata for search and reuse
 
@@ -146,14 +151,15 @@ This minimum set of metadata (Figure 12) can already be used to perform basic ev
 *	Which existing simulation settings can possibly be used as a template for a new simulation task?
 * ...
 
+[#im-metadata-search]
 .Usage of metadata for search and evaluation
-image::Metadata-Search.png[Metadata-Search, 1000, 1000]
+image::Metadata-Search.png[]
 
-
+[#im-metadata-reuse]
 .Usage of metadata for reuse of simulation
-image::Metadata-Reuse.png[Metadata-Reuse, 1000, 1000]
+image::Metadata-Reuse.png[]
 
-
+[#im-metadata-usage]
 .“Execution dump” from simulation tool as source for metadata
-image::Metadata-usage.png[Metadata-usage, 1000, 1000]
+image::Metadata-usage.png[]
 

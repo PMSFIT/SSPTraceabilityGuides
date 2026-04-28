@@ -59,14 +59,16 @@ For traceability, a stable logical structure is required.
 The *STMD file* is the central element.
 
 It:
-- Represents the CSP structure
-- Links all relevant artifacts
-- Serves as the traceability backbone
+
+* Represents the CSP structure
+* Links all relevant artifacts
+* Serves as the traceability backbone
 
 Key idea:
-- Data remains in existing systems
-- STMD contains links and metadata
-- Exchange is done via SSP containers
+
+* Data remains in existing systems
+* STMD contains links and metadata
+* Exchange is done via SSP containers
 
 === 2.3 Three-Layer Model
 

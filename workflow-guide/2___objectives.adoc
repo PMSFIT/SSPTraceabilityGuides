@@ -13,9 +13,9 @@ The typical procedure in a development or simulation process is shown in Figure 
 Many recursions take place in such a process. The Credible Simulation Process (CSP) therefore does not represent the chronological sequence but the logical order of the sequence. This is required for traceability.
 *The CSP is therefore a documentation schema and not a chronological process description.*
 
-
+[#im-csp-recursions]
 .The Credible Simulation Process and the STMD Format supports the logical order
-image::CSP-recursions.png[CSP-recursions, 1000, 1000]
+image::CSP-recursions.png[]
 
 
 

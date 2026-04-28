@@ -48,6 +48,7 @@ Real simulation processes are iterative and recursive.
 For traceability, a stable logical structure is required.
 
 **Therefore:
+
 * CSP = logical structure of information
 * NOT = execution timeline**
 

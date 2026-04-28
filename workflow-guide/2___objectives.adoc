@@ -3,9 +3,10 @@
 This guide explains how to apply the *SSP Traceability Layered Standard* in practice.
 
 It focuses on:
-- Structuring simulation information
-- Linking artifacts and results
-- Enabling traceability and reuse
+
+* Structuring simulation information
+* Linking artifacts and results
+* Enabling traceability and reuse
 
 The standard is defined as an XML schema (STMD) and is intended to be used with appropriate tool support.
 
@@ -17,9 +18,10 @@ https://modelica.github.io/ssp-ls-traceability/main/
 === 1.1 Purpose of this Guide
 
 This user guide provides:
-- Practical explanations
-- Usage patterns
-- Examples
+
+* Practical explanations
+* Usage patterns
+* Examples
 
 It complements the specification and focuses on real-world application.
 

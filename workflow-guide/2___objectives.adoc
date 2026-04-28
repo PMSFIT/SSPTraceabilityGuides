@@ -1,45 +1,334 @@
-== Objectives, structure, and application of SSP traceability
+= SSP Traceability Layered Standard – User Guide
 
-Objectives:
+This guide explains how to apply the *SSP Traceability Layered Standard* in practice.
 
-* Structuring of information
-* Traceability of simulations and their results
-* Reuse of simulations
-* Use, exchange in heterogeneous simulation and IT infrastructures
-* cooperation with partners
+It focuses on:
+- Structuring simulation information
+- Linking artifacts and results
+- Enabling traceability and reuse
 
-In the following it is described how the STMD Schema supports the Credible Simulation Process. The typical procedure in a development or simulation process is shown in Figure 1.
-Many recursions take place in such a process. The Credible Simulation Process (CSP) therefore does not represent the chronological sequence but the logical order of the sequence. This is required for traceability.
-The CSP is therefore a documentation schema and not a chronological process description.
+The standard is defined as an XML schema (STMD) and is intended to be used with appropriate tool support.
 
+For a formal definition, see the specification:
+https://modelica.github.io/ssp-ls-traceability/main/
 
-.The Credible Simulation Process and the STMD Format supports the logical order
-image::CSP-recursions.png[CSP-recursions, 1000, 1000]
+== 1. Introduction
 
+=== 1.1 Purpose of this Guide
 
+This user guide provides:
+- Practical explanations
+- Usage patterns
+- Examples
 
-Figure 2 shows how the information, the CSP and the coordinated SSP traceability data format Simulation Task Meta Data (STMD) interact. The STMD format is one of the information. Data are linked to the STMD XML schema file according to their type. This STMD XML file with the links can then be saved or exchanged and is the basic building block for traceability.
-The LS SSP-Traceability requires that the importing and exporting tools and data management systems support this standard and structure.
-However, no specifications are made as to how the internal data management tool must be structured.
+It complements the specification and focuses on real-world application.
 
+=== 1.2 What SSP Traceability Enables
 
-.Linkage between information, Credible Simulation Process and STMD
-image::CSP-workflow.png[CSP-workflow, 1000, 1000]
+Using SSP Traceability, you can:
 
+* Structure simulation-related information consistently
+* Trace results back to inputs and assumptions
+* Reuse simulation setups
+* Exchange data across tools and organizations
+* Improve collaboration with partners
 
-The following three layers should be distinguished in implementation and application
+== 2. Core Concepts
 
-* Process
-** Structuring of information according to logical context
-*	Data
-**	Data and version management
-* Workflow
-**	Interfaces corresponding to the application
+=== 2.1 Credible Simulation Process (CSP)
 
+The *Credible Simulation Process (CSP)* is the foundation of SSP Traceability.
 
-.Use of a 3-layer approach for implementation 
-image::CSP-3Layer.png[CSP-3Layer, 1000, 1000]
+IMPORTANT:
+The CSP does not describe a chronological workflow.
 
-The LS SSP-Traceability focuses on supporting the process level. Clear logical structuring as the basis for traceability. The data is linked to the SSP Traceability Schema. Links to any data management system can be used. For exchange with partners who do not have direct access to these systems, this data can be packaged and sent as part of an SSP container. The specifications of this structure are part of the LS SSP-Traceability specification. Users should only enter their information via a workflow interface and use the Credible Simulation Process indirectly. At the workflow interface, the information should be provided in the form and order that corresponds to typical use. Here, a mapping of names that are intuitively understandable for the user in the input masks to the IT systems' unique naming conventions should also take place. These naming conventions are usually not directly intuitive or cumbersome for the user to understand.
-The user guide focuses on the application and use of the STMD schema that support the process level.
+Instead, it provides a *logical structure* for organizing simulation information.
 
+Real simulation processes are iterative and recursive.
+For traceability, a stable logical structure is required.
+
+Therefore:
+- CSP = logical structure of information
+- NOT = execution timeline
+
+=== 2.2 Simulation Task Meta Data (STMD)
+
+The *STMD file* is the central element.
+
+It:
+- Represents the CSP structure
+- Links all relevant artifacts
+- Serves as the traceability backbone
+
+Key idea:
+- Data remains in existing systems
+- STMD contains links and metadata
+- Exchange is done via SSP containers
+
+=== 2.3 Three-Layer Model
+
+SSP Traceability can be understood using three layers:
+
+[cols="1,3"]
+|===
+| Layer | Description
+
+| Process | Logical structuring (CSP)
+| Data | Storage, versioning, data management
+| Workflow | User interfaces and tool interaction
+|===
+
+SSP Traceability mainly addresses the *process layer*.
+
+== 3. Credible Simulation Process in Practice
+
+Each CSP phase consists of:
+
+* Inputs – required information
+* Procedure – how it was done
+* Outputs – results
+* Rationale – why it was done this way
+
+The STMD schema directly maps this structure.
+
+Existing simulation information can be linked accordingly.
+
+== 4. Linking Information
+
+=== 4.1 Basic Principle
+
+Information is linked into the STMD structure based on its role.
+
+[cols="1,2"]
+|===
+| Type of Information | STMD Location
+
+| Requirements / request | Analysis → Input
+| Models / parameters | Implementation
+| Results | Output
+| Decisions / assumptions | Rationale
+|===
+
+=== 4.2 Simulation Request
+
+A simulation request typically contains:
+
+* Administrative information
+* Description of the simulation task
+
+Recommended mapping:
+
+[cols="1,2"]
+|===
+| Content | STMD Location
+
+| Administrative data | Admin phase
+| Task description | Analysis → Input
+|===
+
+Notes:
+
+* A single file can be linked multiple times
+* Information can be split across multiple sources
+
+=== 4.3 Full vs. Lightweight Traceability
+
+Full traceability:
+
+* Link Inputs, Procedure, Outputs, and Rationale
+
+Lightweight traceability:
+
+* Link at least Outputs of each phase
+
+Trade-off:
+
+* Less effort vs. reduced trace depth
+
+=== 4.4 Linking Between Phases
+
+Outputs of one phase are typically used as Inputs for the next phase.
+
+This creates the *traceability chain*.
+
+== 5. File Structure and Packaging
+
+SSP Traceability extends SSP using the `/extra` directory.
+
+Example:
+
+[source]
+----
+/extra/
+  org.ssp-standard.ssp-traceability.stmd/
+    simulation.stmd
+    linkedFiles/
+----
+
+The STMD file:
+
+* Defines the structure
+* Contains links to all artifacts
+
+== 6. Metadata
+
+=== 6.1 Purpose
+
+Metadata enables:
+
+* Search
+* Filtering
+* Reuse
+
+=== 6.2 Storage Options
+
+Metadata can be stored as:
+
+* Classifications (inline)
+* Separate SRMD file (Simulation Resource Metadata)
+* Attached to linked artifacts
+
+All approaches are equivalent.
+
+=== 6.3 Classification Concept
+
+Metadata is implemented using classifications.
+
+Properties:
+
+* Simple structure
+* No hierarchy
+* Multiple entries allowed
+
+Example:
+
+[source]
+----
+execution.tool.name = Dymola
+execution.tool.version = 2024x
+----
+
+=== 6.4 Structuring Metadata
+
+Since no hierarchy is defined:
+
+* Use naming conventions (e.g. dot notation)
+* Use grouping patterns if needed
+
+=== 6.5 Minimum Metadata Set
+
+For basic traceability:
+
+* Project / simulation task
+* Model name
+* Tool and version
+* Input / output references
+
+This already enables:
+
+* Search
+* Basic reuse
+
+== 7. Search and Reuse
+
+With minimal metadata, typical questions can be answered:
+
+* Which simulations belong to a project?
+* Where was a model used?
+* Which tool/version combinations exist?
+* Which setups can be reused?
+
+Additional metadata improves analysis capabilities.
+
+== 8. Design Specification with SSP
+
+SSP supports:
+
+* Exchange of simulation models
+* Definition of system structures
+
+SSP Traceability extends this by linking:
+
+* Design specifications
+* Implementation artifacts
+* Simulation results
+
+=== Example
+
+* FMU → model implementation
+* SSP → system structure
+* STMD → traceability
+
+Result:
+
+Full trace from specification to simulation result.
+
+== 9. Data Exchange and Versioning
+
+=== 9.1 Principle
+
+SSP Traceability:
+
+* Does not replace data management systems
+* Enables standardized exchange between them
+
+=== 9.2 Exchange Mechanism
+
+* Data is packaged into an SSP container
+* STMD defines:
+  - Structure
+  - Links
+  - Versions
+
+This represents a *snapshot (baseline)*.
+
+=== 9.3 Import and Export
+
+Export:
+
+* Create SSP container
+* Include required versions
+* Link via STMD
+
+Import:
+
+* Unpack container
+* Update or create new versions
+
+=== 9.4 Important Note
+
+SSP containers are:
+
+* Not intended for long-term storage
+* Used for data exchange between systems
+
+== 10. Git-Based Workflows
+
+A simple approach:
+
+* Unzip SSP container
+* Store structure in Git
+* Use Git for versioning
+
+This supports:
+
+* Collaboration
+* Transparency
+
+== 11. Examples
+
+All examples are based on a DC motor simulation task.
+
+They demonstrate:
+
+* Basic traceability
+* Metadata usage
+* Design specification
+* Full traceability
+
+The level of detail depends on:
+
+* Required traceability
+* Documentation effort
+
+See link:examples.adoc[Examples].

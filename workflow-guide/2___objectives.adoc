@@ -47,9 +47,9 @@ Instead, it provides a *logical structure* for organizing simulation information
 Real simulation processes are iterative and recursive.
 For traceability, a stable logical structure is required.
 
-Therefore:
-- CSP = logical structure of information
-- NOT = execution timeline
+**Therefore:
+* CSP = logical structure of information
+* NOT = execution timeline**
 
 === 2.2 Simulation Task Meta Data (STMD)
 

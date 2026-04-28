@@ -40,9 +40,9 @@ The following three layers should be distinguished in implementation and applica
 * Workflow
 **	Interfaces corresponding to the application
 
-
+[#im-csp-3layer]
 .Use of a 3-layer approach for implementation 
-image::CSP-3Layer.png[CSP-3Layer, 1000, 1000]
+image::CSP-3Layer.png[]
 
 The LS SSP-Traceability focuses on supporting the process level. Clear logical structuring as the basis for traceability. The data is linked to the SSP Traceability Schema. Links to any data management system can be used. For exchange with partners who do not have direct access to these systems, this data can be packaged and sent as part of an SSP container. The specifications of this structure are part of the LS SSP-Traceability specification. 
 

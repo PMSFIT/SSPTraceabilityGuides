@@ -8,7 +8,8 @@ Objectives:
 * Use, exchange in heterogeneous simulation and IT infrastructures
 * cooperation with partners
 
-In the following it is described how the STMD Schema supports the Credible Simulation Process. The typical procedure in a development or simulation process is shown in Figure 1.
+In the following it is described how the STMD Schema supports the Credible Simulation Process. https://modelica.github.io/ssp-ls-traceability/main/#sec-crediblesimulationprocessframework[Credible Simulation Process Framework].
+The typical procedure in a development or simulation process is shown in Figure 1.
 Many recursions take place in such a process. The Credible Simulation Process (CSP) therefore does not represent the chronological sequence but the logical order of the sequence. This is required for traceability.
 The CSP is therefore a documentation schema and not a chronological process description.
 

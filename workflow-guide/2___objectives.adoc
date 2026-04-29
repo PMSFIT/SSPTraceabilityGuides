@@ -25,7 +25,7 @@ The STMD format is part of the information. The data is linked to the STMD XML s
 
 This STMD XML file with the links can then be saved or exchanged and forms the building block for traceability. 
 
-LS SSP Traceability requires that the import and export tools as well as the data management systems support this standard and this structure. However, no specifications are provided regarding how the internal data management tool must be structured.
+LS SSP Traceability requires that the import and export tools as well as the data management systems support this standard and this structure. However, no specifications are provided regarding how the data management tool must internally structure the data.
 
 .Linkage between information, Credible Simulation Process and STMD
 image::CSP-workflow.png[CSP-workflow, 1000, 1000]

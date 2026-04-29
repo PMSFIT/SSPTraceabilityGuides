@@ -9,22 +9,21 @@ A detailed description of the Credible Simulation Process Framework is available
 
 The STMD schema maps this structure. In the application, the existing information of a simulation task can now be linked accordingly.
 
-[#im-glueparcsp-details]
+[#im-csp-details]
 .Detailed structure of the Credible Simulation Process
-image::GlueParCSP-details.png[]
+image::CSP-details.png[]
 
 
 === Allocation and linking of information
 
+The SSP structure has been supplemented with a directory extra for layered standard extensions. Each layered standard has its own specific folder, e.g., for the simulation task org.ssp-standard.ssp-traceability.stmd. The necessary information and files specific to the SSP layered standard are then stored in this folder. 
+Figure 5 shows the structure for the example explained below.
+For ease of understanding, the files are numbered according to their logical order. The last file shown here is the simulation task meta data file (.stmd), which contains the structure and links of the information.
 
 [#im-ssp-trace-structure]
 .LS SSP-Traceability file structure
 image::SSP-Trace-structure.png[]
 
-
-The SSP structure has been supplemented with a directory extra for layered standard extensions. Each layered standard has its own specific folder, e.g., for the simulation task org.ssp-standard.ssp-traceability.stmd. The necessary information and files specific to the SSP layered standard are then stored in this folder. 
-Figure 5 shows the structure for the example explained below.
-For ease of understanding, the files are numbered according to their logical order. The last file shown here is the simulation task meta data file (.stmd), which contains the structure and links of the information.
 
 ==== Linking information in the STMD file
 
@@ -131,10 +130,6 @@ image::Metadata-Multi.png[]
 ==== Basic traceability of a simulation task using metadata
 
 The information and metadata required depend on the use case. Figures 11 and 12 describe a set of metadata that is the minimum required for basic traceability. This metadata can be provided with little effort. 
-
-[#im-glueparticlestructureschema]
-.Location of metadata in the CSP and their sources
-image::GlueParticleStructureSchema.png[]
 
 [#im-metadata-basic-csp]
 .Set of metadata required for basic traceability

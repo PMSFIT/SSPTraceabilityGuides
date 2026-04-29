@@ -127,34 +127,59 @@ The classification schema was deliberately kept simple so that it can be support
 image::Metadata-Multi.png[]
 
 
-==== Basic traceability of a simulation task using metadata
+==== Metadata for basic use cases
 
-The information and metadata required depend on the use case. Figures 11 and 12 describe a set of metadata that is the minimum required for basic traceability. This metadata can be provided with little effort. 
+The information and metadata required depend on the use case. The following proposes a set of metadata that enables basic functionality for search, analysis, reuse, and traceability. A key factor for user acceptance is that most of this information can be provided by IT systems. 
 
-[#im-metadata-basic-csp]
-.Set of metadata required for basic traceability
-image::Metadata-basic-CSP.png[]
 
-==== Usage of metadata for search and reuse
+[cols="1>m,2^e,7<",width="70%",align="center",frame="topbot",options="header"]
+|===
+| Attribute Name| Group | Obligation | Description | Typical Source
+| Ordering project | Administrative Data | Recommended | Unique name of the ordering project | Project management tool
+| Specific Product | Administrative Data | Recommended | Unique name of the specific product | Project management tool
+| Simulation Request | Administrative Data | Recommended | Unique name of the Simulation Request | Project management tool
+| Simulation task | Administrative Data | Mandatory | Unique name of the simulation task | Project management tool
+| Item under Test | Analysis | Mandatory | System, component, or product being analyzed | Tool / system
+| Simulation Objective | Analysis | Recommended | Objective or purpose of the simulation | User
+| Quality, credibility Criterion | Analysis | Recommended | Criteria used to evaluate simulation success | User
+| Used Model | Used Elements | Mandatory | Model used for the simulation | Tool / system
+| Used Parameter | Used Elements | Optional | Parameter used for the simulation | user (selection)
+| Used Tool | Used Elements | Mandatory | Tool used for the simulation | Tool / system
+| Used Test Cases | Used Elements | Optional | Test cases used for the simulation | user (selection)
+| Task status | Result Status | Mandatory | Is the task still in progress abortet, finished | User
+| Credibility fulfilled | Result Status | Recommended | Documentation of the credibility fulfillment decision | User
+| Objectives fulfilled | Result Status | Recommended | Documentation of the objectives fulfillment decision  | User
+|===
 
-This minimum set of metadata (Figure 12) can already be used to perform basic evaluations, searches and reuse (Figuer 13 + 14). If this metadata is attached to the corresponding sources, further information can be obtained by analyzing the sources as needed.
 
-*Usecases for basic Traceability*
+The following illustrates how this information is linked to the development and simulation process.
+
+[plantuml]
+----
+Decision Task
+      |
+      v
+Simulation Request
+      |
+      v
+Simulation Task
+      |
+      v
+Simulation Results
+
+Simulation Results --> Search
+Simulation Results --> Analysis
+Simulation Results --> Reuse
+----
+
+
+This minimum set of metadata  can already be used to perform basic evaluations, searches and reuse 
+
+*Basic usecases*
+
 *	I am looking for the corresponding simulations for a project
 *	For which applications was Model Z used?
 *	In which simulations was a tool used in Version X with models of Version Y
 *	Which existing simulation settings can possibly be used as a template for a new simulation task?
 * ...
-
-[#im-metadata-search]
-.Usage of metadata for search and evaluation
-image::Metadata-Search.png[]
-
-[#im-metadata-reuse]
-.Usage of metadata for reuse of simulation
-image::Metadata-Reuse.png[]
-
-[#im-metadata-usage]
-.“Execution dump” from simulation tool as source for metadata
-image::Metadata-usage.png[]
 

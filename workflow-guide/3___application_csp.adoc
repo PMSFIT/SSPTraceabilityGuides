@@ -129,26 +129,25 @@ image::Metadata-Multi.png[]
 
 ==== Metadata for basic use cases
 
-The information and metadata required depend on the use case. The following proposes a set of metadata that enables basic functionality for search, analysis, reuse, and traceability. A key factor for user acceptance is that most of this information can be provided by IT systems. 
-
+The information and metadata required depend on the use case. The following proposes a set of metadata that enables basic functionality for search, analysis, reuse, and traceability. A key factor for user acceptance is that most of this information can be provided by the used IT systems. 
+The listed process phase "Administrative" is not a phase itself but it is part of the STMD-File and contains the relevant administrative information.
 
 [cols="1>m,2^e,7<",width="70%",align="center",frame="topbot",options="header"]
 |===
-| Attribute Name| Group | Obligation | Description | Typical Source
-| Ordering project | Administrative Data | Recommended | Unique name of the ordering project | Project management tool
-| Specific Product | Administrative Data | Recommended | Unique name of the specific product | Project management tool
-| Simulation Request | Administrative Data | Recommended | Unique name of the Simulation Request | Project management tool
-| Simulation task | Administrative Data | Mandatory | Unique name of the simulation task | Project management tool
-| Item under Test | Analysis | Mandatory | System, component, or product being analyzed | Tool / system
-| Simulation Objective | Analysis | Recommended | Objective or purpose of the simulation | User
-| Quality, credibility Criterion | Analysis | Recommended | Criteria used to evaluate simulation success | User
-| Used Model | Used Elements | Mandatory | Model used for the simulation | Tool / system
-| Used Parameter | Used Elements | Optional | Parameter used for the simulation | user (selection)
-| Used Tool | Used Elements | Mandatory | Tool used for the simulation | Tool / system
-| Used Test Cases | Used Elements | Optional | Test cases used for the simulation | user (selection)
-| Task status | Result Status | Mandatory | Is the task still in progress abortet, finished | User
-| Credibility fulfilled | Result Status | Recommended | Documentation of the credibility fulfillment decision | User
-| Objectives fulfilled | Result Status | Recommended | Documentation of the objectives fulfillment decision  | User
+| Attribute Name| Process Phase | Classification | Description | Typical Source
+| Ordering project | Administrative | administrative.ordering-project.name | Unique name of the ordering project | Project management tool
+| Specific Product | Administrative | administrative.specific-product.name | Unique name of the specific product | Project management tool
+| Simulation Request | Administrative | administrative.simulation-request.name | Unique name of the Simulation Request | Project management tool
+| Simulation task | Administrative | administrative.simulation-task.name | Unique name of the simulation task | Project management tool
+| Item under Test | Analysis | analysis.item-under-test.name | System, component, or product being analyzed | Tool / system
+| Simulation Objective | Analysis | analysis.simulation-task.objectives | Objective or purpose of the simulation | User
+| Quality criterion | analysis.quality-aspects | Recommended | Criteria used to evaluate simulation success | User
+| Used Model | Execution | execution.model.name | Model used for the simulation | Tool / system
+| Used Parameter | Execution | execution.parameters.name | Parameter used for the simulation | user (selection)
+| Used Tool | Execution | execution.tool.name | Tool used for the simulation | Tool / system
+| Task status | Fulfillment | fulfillment.task-status | Is the task still in progress abortet, finished | User
+| Credibility fulfilled | Fulfillment | fulfillment.credibility | Documentation of the credibility fulfillment decision | User
+| Objectives fulfilled | Fulfillment | fulfillment.objectives | Documentation of the objectives fulfillment decision  | User
 |===
 
 

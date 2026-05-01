@@ -8,7 +8,7 @@ image::DC-motor.png[DC-motor, 1000, 1000]
 
 *List of Examples*
 
-.  *https://github.com/PMSFIT/SSPTraceabilityGuides/blob/revamp-workflow-guide/workflow-guide/examples/SSP-Trace-Basic.ssp[Linking of Sources]*
+.  *Linking of Sources*
 ** Example of how sources are linked. Figures 5 and 6 are taken from this.
 . *Usage of metadata*
 ** Extension of example 1. Figures 7, 8 and 9 are taken from this. 

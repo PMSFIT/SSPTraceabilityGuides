@@ -15,7 +15,7 @@ image::DC-motor.png[DC-motor, 1000, 1000]
 . *Simulation of a DC-motor with basic additional information*
 ** Simulatable on every tool which supports SSP. 
 . *Example with Simulation request which contains design specification*
-**  Figure 11 5 is taken from this example.
+**  Figure 11 is taken from this example.
 . *Example with extended information set, design specification, simulation*
 ** covers also modeling and testing of a sub-model
 

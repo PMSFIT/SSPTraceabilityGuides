@@ -20,7 +20,7 @@ image::DesignSpec.png[]
 
 === SSP-Traceability for Data Exchange
 
-All common data management systems support configuration, versioning, metadata, and labeling, especially for metadata, but usually as proprietary specific implementations. The SSP Traceability Standard now supports the exchange of information between these systems and to and between simulation tools in a standardized form (Figure 17)
+All common data management systems support configuration, versioning, metadata, and labeling, especially for metadata, but usually as proprietary specific implementations. The SSP Traceability Standard now supports the exchange of information between these systems and to and between simulation tools in a standardized form (Figure 12)
 
 [#im-datamanagement]
 .LS SSP-Traceability for data exchange in heterogeneous environments

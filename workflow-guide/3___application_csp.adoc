@@ -83,7 +83,7 @@ Metadata serves to provide keywords. In the LS SSP-Traceability Layered Standard
 *	Metadata can be created and used directly as classifications
 *	Created and linked as an SRMD file
 *	Attached to linked sources as classifications (metadata)
-** See Figure 7, red frame
+** See figure 7, red frame
 *	Metadata as an SRMD file in FMUs, 
 
 
@@ -95,9 +95,9 @@ see Phase Admin
 *	As classifications
 **	See line 7 onwards in Figure 7
 * As an srmd file
-** See Figures 7 and 8, green frame
+** See figures 7 and 8, green frame
 * Any format, e.g., Markdown
-** Line 5 in Figure 7 and figure 9
+** Line 5 in figure 7 and figure 9
 
 [#im-admin-classif]
 .Use of classifications for metadata

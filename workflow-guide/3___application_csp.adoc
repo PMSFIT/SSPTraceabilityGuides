@@ -130,7 +130,7 @@ image::Metadata-Multi.png[]
 ==== Metadata for basic use cases
 
 The information and metadata required depend on the use case. The following proposes a set of metadata that enables basic functionality for search, analysis, reuse, and traceability. A key factor for user acceptance is that most of this information can be provided by the used IT systems. 
-The listed process phase "Administrative" is not a phase itself but it is part of the STMD-File and contains the relevant administrative information.Thes set of metadata can be used as starting point in implementation.
+The listed process phase "Administrative" is not a phase itself but it is part of the STMD-File and contains the relevant administrative information. This set of metadata can be used as starting point in implementation.
 
 [cols="1>m,2^e,7<",width="100%",align="center",frame="topbot",options="header"]
 |===

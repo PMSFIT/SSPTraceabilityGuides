@@ -31,7 +31,7 @@ LS SSP Traceability requires that the import and export tools as well as the dat
 image::CSP-workflow.png[CSP-workflow, 1000, 1000]
 
 
-The following three layers should be distinguished in implementation and application
+The following three layers should be distinguished in implementation and application (Figure 3)
 
 * Process
 ** Structuring of information according to logical context

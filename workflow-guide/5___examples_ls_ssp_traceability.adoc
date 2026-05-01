@@ -1,25 +1,24 @@
 == Examples LS SSP-Traceability
 
-=== Example DC-Motor using FMU, SSP, SSP-Traceability
 
-The executable example of the DC motor is available as Appendix X.
-As an extended example, Appendix Y also contains the design specification and the test environment for the mechanical part of the DC motor. This example also includes a large amount of documentation and metadata. The amount of documentation depends on the required level of traceability and comprehensibility, as this involves a certain amount of effort.
-
-All examples are based on the simulation task of a DC-motor (Figure 18)
+All examples are based on the simulation task of a DC-motor (Figure 13)
 
 .Simulation task is pre-selection of a DC-motor 
 image::DC-motor.png[DC-motor, 1000, 1000]
 
 *List of Examples*
 
-=== Linking of Sources
+.  *https://github.com/PMSFIT/SSPTraceabilityGuides/blob/revamp-workflow-guide/workflow-guide/examples/SSP-Trace-Basic.ssp[Linking of Sources]*
+** Example of how sources are linked. Figures 5 and 6 are taken from this.
+. *Usage of metadata*
+** Extension of example 1. Figures 7, 8 and 9 are taken from this. 
+. *Simulation of a DC-motor with basic additional information*
+** Simulatable on every tool which supports SSP. 
+. *Example with Simulation request which contains design specification*
+**  Figure 11 5 is taken from this example.
+. *Example with extended information set, design specification, simulation*
+** covers also modeling and testing of a sub-model
 
-=== Usage of metadata
-
-=== Simulation request with design specification
-
-=== Simulation of a DC-motor with basic additional information
-
-=== Example with full information set, design specification, simulation
+As an extended example 5 also contains the design specification and the test environment for the mechanical part of the DC motor. This example also includes a large amount of documentation and metadata. The amount of documentation depends on the required level of traceability and comprehensibility, as this involves a certain amount of effort.
 
 

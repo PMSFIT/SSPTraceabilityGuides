@@ -1,5 +1,10 @@
 == Examples LS SSP-Traceability
 
+=== Example DC-Motor using FMU, SSP, SSP-Traceability
+
+The executable example of the DC motor is available as Appendix X.
+As an extended example, Appendix Y also contains the design specification and the test environment for the mechanical part of the DC motor. This example also includes a large amount of documentation and metadata. The amount of documentation depends on the required level of traceability and comprehensibility, as this involves a certain amount of effort.
+
 All examples are based on the simulation task of a DC-motor (Figure 18)
 
 .Simulation task is pre-selection of a DC-motor 

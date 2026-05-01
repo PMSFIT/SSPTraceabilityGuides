@@ -6,7 +6,7 @@ All examples are based on the simulation task of a DC-motor (Figure 13)
 .Simulation task is pre-selection of a DC-motor 
 image::DC-motor.png[DC-motor, 1000, 1000]
 
-*List of Examples*
+*https://github.com/PMSFIT/SSPTraceabilityGuides/tree/revamp-workflow-guide/workflow-guide/examples[List of Examples]*
 
 .  *Linking of Sources*
 ** Example of how sources are linked. Figures 5 and 6 are taken from this.

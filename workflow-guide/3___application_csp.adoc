@@ -141,7 +141,7 @@ The listed process phase "Administrative" is not a phase itself but it is part o
 | Simulation task | Administrative | administrative.simulation-task.name | Unique name of the simulation task | Project management tool
 | Item under Test | Analysis | analysis.item-under-test.name | System, component, or product being analyzed | Tool / system
 | Simulation Objective | Analysis | analysis.simulation-task.objectives | Objective or purpose of the simulation | User
-| Quality criterion | analysis.quality-aspects | Recommended | Criteria used to evaluate simulation success | User
+| Quality criterion | | Analysis |analysis.quality-aspects | Criteria used to evaluate simulation success | User
 | Used Model | Execution | execution.model.name | Model used for the simulation | Tool / system
 | Used Parameter | Execution | execution.parameters.name | Parameter used for the simulation | user (selection)
 | Used Tool | Execution | execution.tool.name | Tool used for the simulation | Tool / system

@@ -7,7 +7,7 @@
 
 - [[[SSP21]]] Modelica Association: **System Structure and Parameterization 2.1**. May 2026. https://github.com/modelica/ssp-standard
 
-- [[[STMD]]] Modelica Association: **SSP Traceability Version 1.0**
+- [[[STMD]]] Modelica Association: **SSP Traceability Version 2.1**
 https://modelica.github.io/ssp-ls-traceability/main/
 
 - [[[MIC]]] prostep.org, irt SystemX.org: **MIC-Core 1.0**

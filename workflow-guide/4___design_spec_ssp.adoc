@@ -7,7 +7,7 @@ The SSP standard is intended to support
 
 In a simulation request, it is generally sufficient to describe the simulation task and its objective. However, no further specifications are made regarding the type of simulation and the models used (as in the example in Figures 5+ 6).
 
-However, more detailed information, such as design specifications or parts of the implementation and test environments, is often specified. A simple example is provided in the chapter examples (Figure. XX and SSP-Trace-DesignSpec.ssp), the electromagnetic part of the DC motor is transferred as an FMU, while only the shell description with interfaces is provided for the mechanical part. It makes sense to use LS SSP-Traceability directly as a container for the artifacts here. The FMUs whose interconnection is specified as SSD are linked as inputs to the implementation phase (Figure 16). This approach makes it possible to trace what was input and what was created in the simulation task itself.
+However, more detailed information, such as design specifications or parts of the implementation and test environments, is often specified. A simple example is provided in the chapter examples (Figure. 13 and SSP-Trace-DesignSpec.ssp), the electromagnetic part of the DC motor is transferred as an FMU, while only the shell description with interfaces is provided for the mechanical part. It makes sense to use LS SSP-Traceability directly as a container for the artifacts here. The FMUs whose interconnection is specified as SSD are linked as inputs to the implementation phase (Figure 11). This approach makes it possible to trace what was input and what was created in the simulation task itself.
 
 [#im-designspec]
 .Transfer of design and implementation specifications

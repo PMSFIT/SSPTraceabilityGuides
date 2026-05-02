@@ -146,7 +146,7 @@ The listed process phase "Administrative" is not a phase itself but it is part o
 | Used Parameter | Execution | execution.parameters.name | Parameter used for the simulation | user (selection)
 | Used Tool | Execution | execution.tool.name | Tool used for the simulation | Tool / system
 | Task status | Fulfillment | fulfillment.task-status | Is the task still in progress abortet, finished | User
-| Credibility fulfilled | Fulfillment | fulfillment.credibility | Documentation of the credibility fulfillment decision | User
+| Quality fulfilled | Fulfillment | fulfillment.quality | Documentation of the quality fulfillment decision | User
 | Objectives fulfilled | Fulfillment | fulfillment.objectives | Documentation of the objectives fulfillment decision  | User
 |===
 

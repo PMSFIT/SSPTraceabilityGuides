@@ -1,4 +1,4 @@
-== Objectives, structure, and application of SSP traceability
+== Objectives, Structure, and Application of SSP Traceability
 
 Objectives:
 
@@ -6,32 +6,38 @@ Objectives:
 * Traceability of simulations and their results
 * Reuse of simulations
 * Use, exchange in heterogeneous simulation and IT infrastructures
-* cooperation with partners
+* Cooperation with partners
 
-In the following it is described how the STMD Schema supports the Credible Simulation Process. (more information: https://modelica.github.io/ssp-ls-traceability/main/#sec-crediblesimulationprocessframework[Credible Simulation Process Framework] ).
-The typical procedure in a development or simulation process is shown in Figure 1.
-Many recursions take place in such a process. The Credible Simulation Process (CSP) therefore does not represent the chronological sequence but the logical order of the sequence. This is required for traceability.
-*The CSP is therefore a documentation schema and not a chronological process description.*
+In the following it is described how the SSP Traceability STMD Schema supports the Credible Simulation Process <<CSP>>.
+
+NOTE: More information on the relationship between SSP LS Traceability and the Credible Simulation Process Framework can be found in https://modelica.github.io/ssp-ls-traceability/main/#sec-crediblesimulationprocessframework[section 2] of the SSP LS Traceability.
+
+The typical procedure in a development or simulation process is shown in <<im-csp-recursions>>.
+Many recursions take place in such a process.
+The Credible Simulation Process (CSP) therefore does not represent the chronological sequence but the logical order of the sequence.
+This is required for traceability.
+
+IMPORTANT: The CSP is therefore a documentation schema and not a chronological process description.
 
 [#im-csp-recursions]
 .The Credible Simulation Process and the STMD Format supports the logical order
 image::CSP-recursions.png[]
 
+<<im-csp-workflow>> illustrates how the information, the CSP, and the corresponding SSP traceability data format “Simulation Task Meta Data” (STMD) interact with one another. 
 
-
-Figure 2 illustrates how the information, the CSP, and the corresponding SSP traceability data format “Simulation Task Meta Data” (STMD) interact with one another. 
-
-The STMD format is part of the information. The data is linked to the STMD XML schema file according to its type. 
+The STMD format is part of the information.
+The data is linked to the STMD XML schema file according to its type. 
 
 This STMD XML file with the links can then be saved or exchanged and forms the building block for traceability. 
 
-LS SSP Traceability requires that the import and export tools as well as the data management systems support this standard and this structure. However, no specifications are provided regarding how the data management tool must internally structure the data.
+SSP LS Traceability requires that the import and export tools as well as the data management systems support this standard and this structure.
+However, no specifications are provided regarding how the data management tool must internally structure the data.
 
+[#im-csp-workflow]
 .Linkage between information, Credible Simulation Process and STMD
 image::CSP-workflow.png[CSP-workflow, 1000, 1000]
 
-
-The following three layers should be distinguished in implementation and application (Figure 3)
+The following three layers should be distinguished in implementation and application (<<im-csp-3layer>>):
 
 * Process
 ** Structuring of information according to logical context
@@ -44,8 +50,15 @@ The following three layers should be distinguished in implementation and applica
 .Use of a 3-layer approach for implementation 
 image::CSP-3Layer.png[]
 
-The LS SSP-Traceability focuses on supporting the process level. Clear logical structuring as the basis for traceability. The data is linked to the SSP Traceability Schema. Links to any data management system can be used. For exchange with partners who do not have direct access to these systems, this data can be packaged and sent as part of an SSP container. The specifications of this structure are part of the LS SSP-Traceability specification. 
+The SSP LS Traceability focuses on supporting the process level.
+Clear logical structuring as the basis for traceability.
+The data is linked to the SSP Traceability Schema.
+Links to any data management system can be used.
+For exchange with partners who do not have direct access to these systems, this data can be packaged and sent as part of an SSP container.
+The specifications of this structure are part of the SSP LS Traceability specification. 
 
-Users should only enter their information via a workflow interface and use the Credible Simulation Process indirectly. At the workflow interface, the information should be provided in the form and order that corresponds to typical use. Here, a mapping of names that are intuitively understandable for the user in the input masks to the IT systems' unique naming conventions should also take place. These naming conventions are usually not directly intuitive or cumbersome for the user to understand.
+Users should only enter their information via a workflow interface and use the Credible Simulation Process indirectly.
+At the workflow interface, the information should be provided in the form and order that corresponds to typical use.
+Here, a mapping of names that are intuitively understandable for the user in the input masks to the IT systems' unique naming conventions should also take place.
+These naming conventions are usually not directly intuitive or cumbersome for the user to understand.
 The user guide focuses on the application and use of the STMD schema that support the process level.
-

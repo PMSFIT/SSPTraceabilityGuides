@@ -24,7 +24,9 @@ include::3___application_csp.adoc[]
 
 include::4___design_spec_ssp.adoc[]
 
-include::5___examples_ls_ssp_traceability.adoc[]
+include::5___data_management.adoc[]
+
+include::6___ssp_ls_traceability_examples.adoc[]
 
 include::A___glossary.adoc[]
 

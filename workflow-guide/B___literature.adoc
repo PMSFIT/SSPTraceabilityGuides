@@ -5,13 +5,14 @@
 
 - [[[SEMVER200]]] Preston-Werner, T.: **Semantic Versioning 2.0.0**. https://semver.org/spec/v2.0.0.html
 
-- [[[SSP21]]] Modelica Association: **System Structure and Parameterization 2.1**. May 2026. https://github.com/modelica/ssp-standard
+- [[[SSP201]]] Modelica Association: **System Structure and Parameterization 2.0.1**. May 2026. https://ssp-standard.org/docs/2.0.1/
 
-- [[[STMD]]] Modelica Association: **SSP Traceability Version 2.1**
-https://modelica.github.io/ssp-ls-traceability/main/
+- [[[SSPLST]]] Modelica Association: **SSP Layered Standard Traceability Version 1.0**. August 2025. https://ssp-standard.org/ssp-ls-traceability/1.0.0/
 
-- [[[MIC]]] prostep.org, irt SystemX.org: **MIC-Core 1.0**
+- [[[MIC]]] prostep ivip, IRT SystemX: **MIC-Core 1.2**. September 2025. 
 https://mic-core.github.io/MIC-Core/main/
 
-- [[[SIC]]] prostep.org, irt SystemX.org: **SIC-Core 1.0**
+- [[[SIC]]] prostep ivip, IRT SystemX: **SIC-Core 0.1**. May 2026. 
 https://mic-core.github.io/MIC-Core/main/
+
+- [[[CSP]]] prostep ivip: **Credible Simulation Process Framework** in prostep ivip SmartSE Recommendation 2025 PSI 11 V4.0 Part H: https://www.prostep.org/en/medialibrary/detail?ai%5Baction%5D=detail&ai%5Bcontroller%5D=Catalog&ai%5Bd_name%5D=prostep-ivip-smartse-recommendation-2025-psi-11-v-4-0-part-h-credible-simulation-process&ai%5Bd_pos%5D=2

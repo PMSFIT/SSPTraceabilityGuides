@@ -1,0 +1,24 @@
+== SSP LS Traceability Examples
+
+All examples are based on the simulation task of a DC-motor (see <<im-dc-motor>>).
+
+[#im-dc-motor]
+.Simulation task is pre-selection of a DC-motor
+image::DC-motor.png[DC-motor, 1000, 1000]
+
+*https://github.com/PMSFIT/SSPTraceabilityGuides/tree/revamp-workflow-guide/workflow-guide/examples[List of Examples]*
+
+.  *Linking of Sources*
+** Example of how sources are linked. <<im-ssp-trace-structure>> and <<im-stmd-links>> are taken from this example.
+. *Usage of metadata*
+** Extension of example 1. <<im-admin-classif>>, <<im-admin-srmd>>, and <<im-admin-markdown>> are taken from this example.
+. *Simulation of a DC-motor with basic additional information*
+** Simulatable on every tool which supports SSP. 
+. *Example with Simulation request which contains design specification*
+**  <<im-designspec>> is taken from this example.
+. *Example with extended information set, design specification, simulation*
+** covers also modeling and testing of a sub-model
+
+As an extended example 5 also contains the design specification and the test environment for the mechanical part of the DC motor.
+This example also includes a large amount of documentation and metadata.
+The amount of documentation depends on the required level of traceability and comprehensibility, as this involves a certain amount of effort.

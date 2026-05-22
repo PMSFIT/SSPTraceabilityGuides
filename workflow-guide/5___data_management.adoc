@@ -1,0 +1,14 @@
+== Data Management and Versioning
+
+=== SSP LS Traceability for Data Exchange
+
+All common data management systems support configuration, versioning, metadata, and labeling, especially for metadata, but usually as proprietary specific implementations.
+The SSP LS Traceability now supports the exchange of information between these systems and to and between simulation tools in a standardized form (<<im-datamanagement>>).
+
+[#im-datamanagement]
+.SSP LS Traceability for data exchange in heterogeneous environments
+image::DataManagement.png[]
+
+=== Using GitLab, GitHub for Data Management
+
+A simple implementation of data management when using GIT is that the zip structure is unzipped directly in GIT and stored and managed in this way.

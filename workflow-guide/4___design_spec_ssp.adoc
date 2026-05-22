@@ -1,32 +1,19 @@
-== Design Specification with SSP, SSP-Traceability
+== Design Specification with SSP, SSP LS Traceability
 
-The SSP standard is intended to support
+The SSP standard <<SSP201>> is intended to support
 
-.	Exchange of interconnected simulation models and their parameterization
-.	Support of the design by specifying empty components through their interface templates
+.	the exchange of interconnected simulation models and their parameterization, and
+.	the simulation design by specifying empty components through their interface templates
 
-In a simulation request, it is generally sufficient to describe the simulation task and its objective. However, no further specifications are made regarding the type of simulation and the models used (as in the example in Figures 5+ 6).
+In a simulation request, it is generally sufficient to describe the simulation task and its objective.
+However, no further specifications are made regarding the type of simulation and the models used (as in the example in <<im-ssp-trace-structure>> and <<im-stmd-links>>).
 
-However, more detailed information, such as design specifications or parts of the implementation and test environments, is often specified. A simple example is provided in the chapter examples (Figure. 13 and SSP-Trace-DesignSpec.ssp), the electromagnetic part of the DC motor is transferred as an FMU, while only the shell description with interfaces is provided for the mechanical part. It makes sense to use LS SSP-Traceability directly as a container for the artifacts here. The FMUs whose interconnection is specified as SSD are linked as inputs to the implementation phase (Figure 11). This approach makes it possible to trace what was input and what was created in the simulation task itself.
+However, more detailed information, such as design specifications or parts of the implementation and test environments, is often specified.
+A simple example is provided in the chapter examples (see <<im-dc-motor>> and `SSP-Trace-DesignSpec.ssp`), the electromagnetic part of the DC motor is transferred as an FMU, while only the shell description with interfaces is provided for the mechanical part.
+It makes sense to use SSP LS Traceability directly as a container for the artifacts here.
+The FMUs whose interconnection is specified as SSD are linked as inputs to the implementation phase (<<im-designspec>>).
+This approach makes it possible to trace what was input and what was created in the simulation task itself.
 
 [#im-designspec]
 .Transfer of design and implementation specifications
 image::DesignSpec.png[]
-
-
-
-
-== Data Management, Versioning
-
-=== SSP-Traceability for Data Exchange
-
-All common data management systems support configuration, versioning, metadata, and labeling, especially for metadata, but usually as proprietary specific implementations. The SSP Traceability Standard now supports the exchange of information between these systems and to and between simulation tools in a standardized form (Figure 12)
-
-[#im-datamanagement]
-.LS SSP-Traceability for data exchange in heterogeneous environments
-image::DataManagement.png[]
-
-=== Using GitLab, GitHub for Data Management
-
-A simple implementation of data management when using GIT is that the zip structure is unzipped directly in GIT and stored and managed in this way.
-

@@ -1,6 +1,8 @@
 == Introduction
 
-Purpose and structure of the user guide.
+=== Purpose and structure of the user guide
 
-The user guide is intended to provide information and examples of how the SSP Traceability Standard can be applied. It is important to note that the Layered Standard SSP Traceability is in XML format, which is clearly structured and readable, but should be created and modified using appropriate tool support. This is comparable to the use of FMUs or SSP. Further introductory information is described in chapters 1-3 of the LS SSP-Traceability.
-
+The user guide is intended to provide information and examples of how the SSP Layered Standard Traceability can be applied.
+It is important to note that the Layered Standard SSP Traceability is in XML format, which is clearly structured and readable, but should be created and modified using appropriate tool support.
+This is comparable to the use of FMUs or SSP.
+Further introductory information is described in chapters 1-3 of the SSP LS Traceability <<SSPLST>>.

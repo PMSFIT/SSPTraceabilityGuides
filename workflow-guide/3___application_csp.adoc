@@ -1,0 +1,194 @@
+== Structure and Application of the Credible Simulation Process
+
+A detailed description of the Credible Simulation Process Framework is available as <<CSP>>.
+<<im-csp-details> shows a more detailed structure of the Credible Simulation Process.
+Each phase is further divided into sub-elements called process steps.
+These steps have a uniform structure, as is also known from process descriptions:
+
+*	Inputs
+*	Procedure
+*	Rationale
+*	Outputs
+
+The STMD schema maps this structure.
+In the application, the existing information of a simulation task can now be linked accordingly.
+
+[#im-csp-details]
+.Detailed structure of the Credible Simulation Process
+image::CSP-details.png[]
+
+=== Allocation and Linking of Information
+
+The SSP structure has been supplemented with a directory `extra` for layered standard extensions.
+Each layered standard has its own specific folder, e.g., for the simulation task `org.ssp-standard.ssp-traceability.stmd`.
+The necessary information and files specific to the SSP layered standard are then stored in this folder.
+<<im-ssp-trace-structure>> shows the structure for the example explained below.
+For ease of understanding, the files are numbered according to their logical order.
+The last file shown here is the simulation task meta data file (.stmd), which contains the structure and links of the information.
+
+[#im-ssp-trace-structure]
+.SSP LS Traceability file structure
+image::SSP-Trace-structure.png[]
+
+==== Linking Information in the STMD File
+
+<<im-stmd-links>> shows how and where information is linked in the STMD schema.
+The STMD XML schema maps a simulation process.
+Information and files can now be linked to the appropriate locations within it according to their content.
+
+[#im-stmd-links]
+.Linking information to the STMD file
+image::STMD-Links.png[]
+
+==== Information from Simulation Request
+
+A simulation request typically contains administrative information and information describing the simulation task.
+The administrative information is necessary for linking to the commissioning processes, development, (name of the product, product development, simulation task, commissioning agency, etc.).
+When describing the simulation task, information is required about what is to be examined and simulated, the name of the item to be simulated, and the objectives of the simulation.
+This information from the simulation request can be provided as a single file or separated into administrative and content-related information. 
+The administrative information is linked under administrative information.
+The information describing the simulation task is linked under Input in the Analysis Phase.
+Any number of sources can be linked here, e.g., a Markdown description and a supplementary PDF.
+If the information is only available in a single file, this file can be linked to several places.
+
+==== Linking to Phases, Steps, Inputs, Outputs
+
+The location of the links to the information should allow assignment to specific phases.
+For larger simulation tasks, a distinction is made within the phases as to whether this information is specific to the models, parameterization, etc.
+These steps have a uniform structure, as is also known from process descriptions:
+
+* Inputs
+* Procedure
+* Outputs
+* Rationale
+
+If complete traceability of all details is required, the following should be linked under
+
+* Inputs: 
+** all information necessary for processing
+* Procedure: 
+** all information used for processing
+* Outputs: 
+** the results that were achieved
+* Rationale: 
+** information on why it was done this way is important for quality assurance
+
+In the example, this is done for the Analysis step.
+The results under Output are then linked as input to the subsequent phase, Steps (see markings in <<im-stmd-links>>).
+
+In practice, for example, in the design specification phase, there is often only one common source of information for models, parameters, test cases, and simulation environment (tooling), where the interaction is also described.
+In such cases, this information should be linked in the simulation integration step.
+
+If complete traceability of all details is not required, however, at least the information in the outputs of all phases should be available.
+This also enables traceability, with the restriction that it is not possible to directly trace which information was used to achieve the output. 
+
+=== Metadata
+
+Metadata serves to provide keywords.
+In the SSP LS Traceability Layered Standard, the classification element was introduced for this purpose.
+Metadata (classifications) can also be combined into a separate Simulation Resource Meta Data (SRMD) file.
+
+==== Usage of Metadata
+
+* Metadata can be created and used directly as classifications
+* Created and linked as an SRMD file
+* Attached to linked sources as classifications (metadata), see <<im-admin-classif>>, red frame
+* Metadata as an SRMD file in FMUs
+
+==== Metadata using Example General (Administrative) Information
+
+The following example shows that there are several options for placing administrative information in the STMD file, 
+see Phase Admin
+
+* As classifications (see line 7 onwards in <<im-admin-classif>>)
+* As an srmd file (see <<im-admin-classif>> and <<im-admin-srmd>>, green frame)
+* Any format, e.g., Markdown (see line 5 in <<im-admin-classif>> and <<im-admin-markdown>>)
+
+[#im-admin-classif]
+.Use of classifications for metadata
+image::Admin-classif.png[]
+
+[#im-admin-srmd]
+.SRMD file for describing metadata
+image::Admin-SRMD.png[]
+
+[#im-admin-markdown]
+.Administrative information as an md file
+image::Admin-markdown.png[]
+
+The options are equivalent.
+Which approach you choose depends on the form in which the information is available and how the simulation task is to be further evaluated.
+A request file can also be included, and some relevant metadata can be attached as classifications.
+Here, however, it is important to note what is the single source of truth and what are copies or interpretations in the metadata.
+
+==== Structuring and Multiplicity of Metadata
+
+The SSP LS Traceability supports metadata with the classification approach (details see at the specification).
+It is important that namespaces are defined using “type.”
+This makes it possible to define specific attributes as desired and means that they do not have to be aligned globally.
+Multiplicity of classifications are possible, so for example the classification parameter can be used several times to list a set of parameters.
+The classification schema was deliberately kept simple so that it can be supported relatively easily by tools.
+Therefore, it does not support sub-structuring or other features.
+The ordering of classification has no syntactical meaning.
+
+* If structuring is needed, this can be done using naming conventions, e.g., using dots (execution.tool.name and execution.tool.version).
+* If a kind of grouping is needed, like for two tools to express their names and version, the Modelica convention of brackets and numbers can be used (see <<im-metadata-multi>>).
+
+[#im-metadata-multi]
+.Sets, multiplicity of metadata, classifications
+image::Metadata-Multi.png[]
+
+==== Metadata for Basic Use Cases
+
+The information and metadata required depend on the use case.
+The following proposes a set of metadata that enables basic functionality for search, analysis, reuse, and traceability.
+A key factor for user acceptance is that most of this information can be provided by the used IT systems. 
+The listed process phase "Administrative" is not a phase itself but it is part of the STMD-File and contains the relevant administrative information.
+This set of metadata can be used as starting point in implementation metadata for simulation.
+
+[cols="1>m,2^e,7<",width="100%",align="center",frame="topbot",options="header"]
+|===
+| Attribute Name| Process Phase | Classification | Description | Typical Source
+| Ordering project | Administrative | administrative.ordering-project.name | Unique name of the ordering project | Project management tool
+| Specific Product | Administrative | administrative.specific-product.name | Unique name of the specific product | Project management tool
+| Simulation Request | Administrative | administrative.simulation-request.name | Unique name of the Simulation Request | Project management tool
+| Simulation task | Administrative | administrative.simulation-task.name | Unique name of the simulation task | Project management tool
+| Item under Test | Analysis | analysis.item-under-test.name | System, component, or product being analyzed | Tool / system
+| Simulation Objective | Analysis | analysis.simulation-task.objectives | Objective or purpose of the simulation | User
+| Quality criterion | Analysis |analysis.quality-aspects | Criteria used to evaluate simulation success | User
+| Used Model | Execution | execution.model.name | Model used for the simulation | Tool / system
+| Used Parameter | Execution | execution.parameters.name | Parameter used for the simulation | user (selection)
+| Used Tool | Execution | execution.tool.name | Tool used for the simulation | Tool / system
+| Task status | Fulfillment | fulfillment.task-status | Is the task still in progress abortet, finished | User
+| Quality fulfilled | Fulfillment | fulfillment.quality | Documentation of the quality fulfillment decision | User
+| Objectives fulfilled | Fulfillment | fulfillment.objectives | Documentation of the objectives fulfillment decision  | User
+|===
+
+The following illustrates how this information is linked to the development and simulation process.
+
+[plantuml]
+----
+Decision Task
+      |
+      v
+Simulation Request
+      |
+      v
+Simulation Task
+      |
+      v
+Simulation Results
+
+Simulation Results --> Search
+Simulation Results --> Analysis
+Simulation Results --> Reuse
+----
+
+This minimum set of metadata can already be used to perform basic evaluations, searches and reuse. 
+
+*Basic Use Cases*
+
+*	I am looking for the corresponding simulations for a project
+*	For which applications was Model Z used?
+*	In which simulations was a tool used in Version X with models of Version Y
+*	Which existing simulation settings can possibly be used as a template for a new simulation task?

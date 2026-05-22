@@ -6,7 +6,7 @@ All examples are based on the simulation task of a DC-motor (see <<im-dc-motor>>
 .Simulation task is pre-selection of a DC-motor
 image::DC-motor.png[DC-motor, 1000, 1000]
 
-*https://github.com/PMSFIT/SSPTraceabilityGuides/tree/revamp-workflow-guide/workflow-guide/examples[List of Examples]*
+*https://github.com/PMSFIT/SSPTraceabilityGuides/tree/main/workflow-guide/examples[List of Examples]*
 
 .  *Linking of Sources*
 ** Example of how sources are linked. <<im-ssp-trace-structure>> and <<im-stmd-links>> are taken from this example.
